@@ -1,3 +1,11 @@
+document.querySelector("#start").addEventListener("click", () => {
+    document.querySelector("#select").classList.toggle("start");
+    document.querySelector("#arrow").classList.toggle("Hover");
+  });
+  
+
+
+
 const search = () =>{
     const searchbox = document.getElementById("search-item").value.toUpperCase();
     const storeitems = document.getElementById("product-list");

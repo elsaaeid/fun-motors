@@ -228,6 +228,25 @@ ol.list-style li a {
 h2.finish {
   font-size: 28px;
 }
+.login-content {
+  width: 80%;
+  margin-top: 100px;
+}
+i.fal.fa-user-circle {
+  font-size: 60px;
+}
+.login-content-bottom {
+  width: 80%;
+}
+.submittion {
+  width: 280px;
+  height: 350px;
+}
+.buttons-content button {
+  width: 47%;
+  height: 3rem;
+  font-size: 10px;
+}
 }
 @media (max-width: 768px) {
   .headline .head {
@@ -458,6 +477,25 @@ ol.list-style li a {
 }
 h2.finish {
   font-size: 28px;
+}
+.login-content {
+  width: 80%;
+  margin-top: 100px;
+}
+i.fal.fa-user-circle {
+  font-size: 60px;
+}
+.login-content-bottom {
+  width: 80%;
+}
+.submittion {
+  width: 280px;
+  height: 350px;
+}
+.buttons-content button {
+  width: 47%;
+  height: 3rem;
+  font-size: 10px;
 }
 }
 @media (max-width: 540px) {
@@ -717,6 +755,25 @@ img.wow.slideInUp.model-img {
   .show-img img {
     width: 10rem;
 }
+.login-content {
+  width: 80%;
+  margin-top: 100px;
+}
+i.fal.fa-user-circle {
+  font-size: 60px;
+}
+.login-content-bottom {
+  width: 80%;
+}
+.submittion {
+  width: 280px;
+  height: 350px;
+}
+.buttons-content button {
+  width: 47%;
+  height: 3rem;
+  font-size: 10px;
+}
 }
 @media (max-width: 414px) {
   .headline .head {
@@ -953,6 +1010,25 @@ ol.list-style li a {
 h2.finish {
   font-size: 28px;
 }
+.login-content {
+  width: 80%;
+  margin-top: 100px;
+}
+i.fal.fa-user-circle {
+  font-size: 60px;
+}
+.login-content-bottom {
+  width: 80%;
+}
+.submittion {
+  width: 280px;
+  height: 350px;
+}
+.buttons-content button {
+  width: 47%;
+  height: 3rem;
+  font-size: 10px;
+}
 }
 @media (max-width: 412px) {
   .headline .head {
@@ -1185,6 +1261,25 @@ ol.list-style li a {
 }
 h2.finish {
   font-size: 28px;
+}
+.login-content {
+  width: 80%;
+  margin-top: 100px;
+}
+i.fal.fa-user-circle {
+  font-size: 60px;
+}
+.login-content-bottom {
+  width: 80%;
+}
+.submittion {
+  width: 280px;
+  height: 350px;
+}
+.buttons-content button {
+  width: 47%;
+  height: 3rem;
+  font-size: 10px;
 }
 }
 @media (max-width: 375px) {
@@ -1431,6 +1526,25 @@ ol.list-style li a {
 h2.finish {
   font-size: 28px;
 }
+.login-content {
+  width: 80%;
+  margin-top: 100px;
+}
+i.fal.fa-user-circle {
+  font-size: 60px;
+}
+.login-content-bottom {
+  width: 80%;
+}
+.submittion {
+  width: 280px;
+  height: 350px;
+}
+.buttons-content button {
+  width: 47%;
+  height: 3rem;
+  font-size: 10px;
+}
 }
 
 @media (max-width: 360px) {
@@ -1672,6 +1786,25 @@ img.wow.slideInUp.model-img {
   }
   .show-img img {
     width: 10rem;
+}
+.login-content {
+  width: 80%;
+  margin-top: 100px;
+}
+i.fal.fa-user-circle {
+  font-size: 60px;
+}
+.login-content-bottom {
+  width: 80%;
+}
+.submittion {
+  width: 280px;
+  height: 350px;
+}
+.buttons-content button {
+  width: 47%;
+  height: 3rem;
+  font-size: 10px;
 }
 }
 @media (max-width: 320px) {
@@ -2162,5 +2295,27 @@ img.wow.slideInUp.model-img {
   }
   h2.finish {
     font-size: 22px;
+  }
+  .login-content {
+    width: 100%;
+    margin-top: 100px;
+  }
+  i.fal.fa-user-circle {
+    font-size: 60px;
+  }
+  .login-content-bottom {
+    width: 100%;
+  }
+  .user-circle h2 {
+    font-size: 25px;
+}
+  .submittion {
+    width: 260px;
+    height: 350px;
+}
+  .buttons-content button {
+    width: 47%;
+    height: 3rem;
+    font-size: 10px;
   }
 }
