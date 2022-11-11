@@ -81,6 +81,33 @@ body {
   width: 100%;
   background-color: #252222;
 }
+
+/*----------------------------------------cart-style*/
+.modal-backdrop {
+  position: sticky;
+}
+.show-cart li {
+  display: flex;
+}
+.card {
+  margin-bottom: 20px;
+}
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+.product-details {
+  background: #484848;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ul.bottom-nav-list-inline2 li .nav-link-hover {
+  color: white;
+}
 /*------------------------------------------------------------------
 		header
 	-------------------------------------------------------------------*/
@@ -293,8 +320,7 @@ ul.bottom-nav-list-inline2 li a {
   padding-top: 30px;
 }
 .nav-link-hover:hover {
-  color: #f9262d;
-  background-color: #323232;
+  color: #ffffff;
 }
 /*------------------------
      dropdown
@@ -1016,14 +1042,9 @@ li.contact-li {
 }
 .mobile-container a {
   color: white;
-  margin-left: 20px;
 }
 #mylinks a {
   color: white;
-}
-.mobile-container a:hover {
-  color: #f9262d;
-  background-color: #323232;
 }
 #mylinks a:hover {
   color: #f9262d;
@@ -1032,6 +1053,10 @@ li.contact-li {
 ul#mylinks li {
   list-style: none;
   height: 45px;
+}
+a:not([href]):not([tabindex]) {
+  color: white;
+  text-decoration: none;
 }
 /*--------------new-cars.style------------------------------used-cars.style----------------------motors.style -------------------------------------------------------------------*/
 /*---container-plus--*/

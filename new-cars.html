@@ -16,6 +16,7 @@
     <!-- Site Icons -->
     <link rel="shortcut icon" href="assets/images/favicon/favicon.PNG" type="image/gif">
     <link rel="stylesheet" type="text/css" href="assets/css/fontawesome-free-5.15.1-web/css/all.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="apple-touch-icon" href="assets/images/favicon.PNG">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -104,8 +105,26 @@
                     </li>
                     <li><a href="index.html" class="active nav-link-hover">الرائيسية</a></li>
                     <li class="search"><a href="#" class="nav-link-hover"><i class="fa fa-search"></i></a></li>
+                    <li>
+                        <a type="button" class="nav-link-hover btn" data-toggle="modal" data-target="#cart">
+                            <sup><span class="total-count"></span></sup>
+                            <i class='bx bx-cart'></i>
+                        </a>      
+                    </li>
+                    <li>
+                        <a class="nav-link-hover clear-cart">
+                            Clear Cart
+                        </a>
+                    </li>
                 </ul>
                 <div class="mobile-container">
+                    <a class="nav-link-hover clear-cart">
+                        Clear Cart
+                    </a>
+                    <a type="button" class="nav-link-hover btn" data-toggle="modal" data-target="#cart">
+                        <sup><span class="total-count"></span></sup>
+                        <i class='bx bx-cart'></i>
+                    </a>  
                     <li class="search"><a href="#" class="nav-link-hover"><i class="fa fa-search"></i></a></li>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
                 </div>
@@ -187,6 +206,30 @@
                     <div class="clear"></div>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <table class="show-cart table">
+                        
+                    </table>
+                    <div>Total price: $<span class="total-cart"></span></div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Order now</button>
+                    </div>
+                </div>
+                </div>
+            </div> 
         </div>
         <div class="clear"></div>
             <!-- End Top Search -->
@@ -241,13 +284,17 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a href="" data-name="peugeot" data-price="127" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
                                 <div id="myModal" class="modal">
                                     <span class="close">&times;</span>
                                     <img class="modal-content" id="img01">
                                     <div id="caption"></div>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">peugeot</h4>
+                                <p class="card-text">Price: E 120.200</p>
                             </div>
                         </div>
                     </div>
@@ -264,7 +311,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="Hyundai" data-price="66.800" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">Hyundai</h4>
+                                <p class="card-text">Price: E 66.800</p>
                             </div>
                         </div>
                     </div>
@@ -281,7 +333,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="peugeot" data-price="127" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">peugeot</h4>
+                                <p class="card-text">Price: E 63.500</p>
                             </div>
                         </div>
                     </div>
@@ -298,7 +355,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="peugeot" data-price="127" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">peugeot</h4>
+                                <p class="card-text">Price: E130.500</p>
                             </div>
                         </div>
                     </div>
@@ -315,7 +377,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="jetour" data-price="91.500" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">jetour</h4>
+                                <p class="card-text">Price: E 91.500</p>
                             </div>
                         </div>
                     </div>
@@ -332,7 +399,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="Toyota" data-price="99.800" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">Toyota</h4>
+                                <p class="card-text">Price: E 99.800</p>
                             </div>
                         </div>
                     </div>
@@ -349,7 +421,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="Hyundai" data-price="66.800" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">Hyundai</h4>
+                                <p class="card-text">Price: E 66.800</p>
                             </div>
                         </div>
                     </div>
@@ -366,7 +443,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="Opel" data-price="88.800" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">Opel</h4>
+                                <p class="card-text">Price: E 88.800</p>
                             </div>
                         </div>
                     </div>
@@ -383,7 +465,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="BYD" data-price="42.500" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">BYD</h4>
+                                <p class="card-text">Price: E 42.500</p>
                             </div>
                         </div>
                     </div>
@@ -400,7 +487,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="peugeot" data-price="127" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">peugeot</h4>
+                                <p class="card-text">Price: $120.200</p>
                             </div>
                         </div>
                     </div>
@@ -417,7 +509,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="peugeot" data-price="127" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">peugeot</h4>
+                                <p class="card-text">Price: $120.200</p>
                             </div>
                         </div>
                     </div>
@@ -434,7 +531,12 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
+                                    <a href="" data-name="peugeot" data-price="127" class="cart add-to-cart btn" href="#">Add to Cart</a>
                                 </div>
+                            </div>
+                            <div class="product-details">
+                                <h4 class="card-title">peugeot</h4>
+                                <p class="card-text">Price: $120.200</p>
                             </div>
                         </div>
                     </div>
@@ -646,6 +748,8 @@
     <script src="assets/js/custom.js"></script>
     <!-- search js -->
     <script src="assets/js/search .js"></script> 
+    <!-- cart js -->
+    <script src="assets/js/cart.js"></script>
 </body>
 
 </html>

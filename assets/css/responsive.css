@@ -82,7 +82,7 @@
     z-index: 111;
 }
 .buy-container {
-  height: 363px;
+  height: 370px;
 }
 button.shape-button {
   width: 80px;
@@ -246,6 +246,10 @@ i.fal.fa-user-circle {
   width: 47%;
   height: 3rem;
   font-size: 10px;
+}
+.mobile-container a {
+  margin-right: 20px;
+  font-size: 14px;
 }
 }
 @media (max-width: 768px) {
@@ -496,6 +500,14 @@ i.fal.fa-user-circle {
   width: 47%;
   height: 3rem;
   font-size: 10px;
+}
+.mobile-container a {
+  margin-right: 15px;
+  font-size: 14px;
+}
+img.logo {
+width: 87%;
+margin-top: 0px;
 }
 }
 @media (max-width: 540px) {
@@ -1029,6 +1041,16 @@ i.fal.fa-user-circle {
   height: 3rem;
   font-size: 10px;
 }
+button.delete-item.btn.btn-danger {
+  margin-left: -16px;
+  margin-top: 40px;
+}
+table.show-cart.table tbody tr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 }
 @media (max-width: 412px) {
   .headline .head {
@@ -1114,7 +1136,7 @@ i.fal.fa-user-circle {
     z-index: 111;
 }
 .buy-container {
-  height: 222px;
+  height: 224px;
 }
 button.shape-button {
   width: 80px;
@@ -1280,6 +1302,14 @@ i.fal.fa-user-circle {
   width: 47%;
   height: 3rem;
   font-size: 10px;
+}
+.mobile-container a {
+  margin-right: 15px;
+  font-size: 14px;
+}
+img.logo {
+  width: 90%;
+  margin-top: 3px;
 }
 }
 @media (max-width: 375px) {
@@ -1545,6 +1575,7 @@ i.fal.fa-user-circle {
   height: 3rem;
   font-size: 10px;
 }
+
 }
 
 @media (max-width: 360px) {
@@ -1806,6 +1837,18 @@ i.fal.fa-user-circle {
   height: 3rem;
   font-size: 10px;
 }
+.mobile-container a {
+  margin-right: 15px;
+  font-size: 14px;
+}
+.mobile-container a {
+  margin-right: 15px;
+  font-size: 14px;
+}
+img.logo {
+width: 87%;
+margin-top: 5px;
+}
 }
 @media (max-width: 320px) {
   .headline .head {
@@ -2044,6 +2087,14 @@ img.wow.slideInUp.model-img {
     height: 39px;
     margin-bottom: 58px;
   }
+  .mobile-container a {
+    margin-right: 15px;
+    font-size: 14px;
+}
+img.logo {
+  width: 87%;
+  margin-top: 5px;
+}
 }
 @media (max-width: 280px) {
   .headline .head {
@@ -2318,4 +2369,22 @@ img.wow.slideInUp.model-img {
     height: 3rem;
     font-size: 10px;
   }
+  .mobile-container a {
+    margin-right: 10px;
+    font-size: 11px;
+}
+img.logo {
+  width: 100%;
+  margin-top: 10px;
+}
+button.delete-item.btn.btn-danger {
+  margin-left: -16px;
+  margin-top: 40px;
+}
+table.show-cart.table tbody tr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 }
