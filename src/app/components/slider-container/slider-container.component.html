@@ -1,0 +1,22 @@
+<!-- Slider Container -->
+<div class="slider-container" id="slider-container">
+    <div class="slider-caption">
+        <h2>Latest vehicles</h2>
+    </div>
+    <!-- Start slider-box  -->
+    <div class="carousel-container slider-box">
+        <carousel>
+            <slide *ngFor="let slide of slides">
+            <div class="item carousel-images">
+                <div class="img-inner-box">
+                    <img [src]="slide.image" alt="" class="slider-image" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            </slide>
+        </carousel>
+    </div>
+    <!-- End slider-box -->
+</div>

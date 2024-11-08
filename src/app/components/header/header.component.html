@@ -1,0 +1,206 @@
+<!-- Header -->
+<div class="header" id="header">
+    <!-- top-nav -->
+    <div class="top-nav">
+        <ul class="list-inline hover-red">
+            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com" title="Twitter" target="_blank"><i
+                        class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com" title="LinkedIn" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.instagram.com" title="Instagram" target="_blank"><i
+                        class="fab fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    <!-- bottom-nav -->
+    <div class="bottom-nav">
+        <a href="/" title="logo" class="logo">
+            <img src="assets/images/logo/logo.png" alt="logo" />
+        </a>
+        <ul class="bottom-nav-list-inline2">
+            <li><a href="/know-more" class="nav-link">اعرف اكتر</a></li>
+            <li><a href="/latest-news" class="nav-link">اخر الاخبار</a></li>
+            <li><a href="/show-room" class="nav-link">العروض</a></li>
+            <li class="dropdown">
+                <a href="#" class="menu-nav-link dropdown-toggle arrow" data-toggle="dropdown">المركبات</a>
+                <ul class="dropdown-menu">
+                    <li class="drobmenu-li"><a href="/new-cars" class="menu-nav-link">سيارات جديده</a></li>
+                    <li class="drobmenu-li"><a href="/used-cars" class="menu-nav-link">سيارات مستعمله</a></li>
+                    <li class="drobmenu-li"><a href="/motors" class="menu-nav-link">موتوسيكلات</a></li>
+                    <li class="drobmenu-li-noborder"><a href="/boats" class="menu-nav-link">قوارب</a></li>
+                </ul>
+            </li>
+            <li><a href="/" class="active menu-nav-link">الرائيسية</a></li>
+            <li class="search nav-link"><i class="fa fa-search"></i></li>
+            <li class="nav-link btn" data-toggle="modal" data-target="#wishlist">
+                <sup><span class="wishlist-total-count"></span></sup>
+                <i class='bx bx-heart'></i>
+            </li>
+            <li>
+                <span class="nav-link btn" data-toggle="modal" data-target="#cart">
+                    <sup><span class="total-count"></span></sup>
+                    <i class='bx bx-cart'></i>
+                </span>
+            </li>
+            <li class="userIcon nav-link" id="userIcon">
+                <i class="fas fa-user"></i>
+            </li>
+        </ul>
+        <ul class="mobile-container">
+            <li>
+                <span class="nav-link btn" data-toggle="modal" data-target="#wishlist">
+                    <sup><span class="wishlist-total-count"></span></sup>
+                    <i class='far fa-heart'></i>
+                </span>
+            </li>
+            <li>
+                <span class="nav-link btn" data-toggle="modal" data-target="#cart">
+                    <sup><span class="total-count"></span></sup>
+                    <i class='bx bx-cart'></i>
+                </span>
+            </li>
+            <li class="search nav-link"><i class="fa fa-search"></i></li>
+            <li class="userIcon nav-link" id="userIcon">
+                <i class="fas fa-user"></i>
+            </li>
+            <li class="tabIcon nav-link">
+                <i class="fa fa-bars"></i>
+            </li>
+        </ul>
+    </div>
+    <ul id="tabLinks">
+        <li><a href="/" class="active menu-nav-link">الرائيسية</a></li>
+        <li class="dropdown">
+            <a href="#" class="menu-nav-link dropdown-toggle arrow" data-toggle="dropdown">المركبات</a>
+            <ul class="dropdown-menu">
+                <li class="drobmenu-li"><a href="/new-cars" class="menu-nav-link">سيارات جديده</a></li>
+                <li class="drobmenu-li"><a href="/used-cars" class="menu-nav-link">سيارات مستعمله</a></li>
+                <li class="drobmenu-li"><a href="/motors" class="menu-nav-link">موتوسيكلات</a></li>
+                <li id="drobmenu-li-noborder"><a href="/boats" class="menu-nav-link">قوارب</a></li>
+            </ul>
+        </li>
+        <li><a href="/show-room" class="menu-nav-link">العروض</a></li>
+        <li><a href="/latest-news" class="menu-nav-link">اخر الاخبار</a></li>
+        <li id="nav-link-hover-noborder"><a href="/know-more" class="menu-nav-link">اعرف اكتر</a></li>
+    </ul>
+    <!-- select register content -->
+    <div class="selectRegister" id="selectRegister">
+        <div class="option"><a class="menu-nav-link" href="/login">login</a></div>
+        <div class="option"><a class="menu-nav-link" href="/register">register</a></div>
+    </div>
+
+    <!-- Start Top Search -->
+    <div class="search-container">
+        <div class="top-search" style="display: none;">
+            <div id="input-group">
+                <input onkeyup="search()" type="text" class="form-control" placeholder="Search" id="search-item">
+                <span class="input-group-addon close-search"><i class="fa fa-times fixed"></i></span>
+            </div>
+            <div class="product-list" id="product-list" style="display:none;">
+                <a href="/new-cars">
+                    <div class="product">
+                        <img src="assets/images/shop/a.jpg" alt="img" style="width:50px;height:50px">
+                        <div class="p-details">		
+                            <h2>سيارات جديده</h2>
+                            <h2>5$</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="/used-cars">
+                    <div class="product">
+                        <img src="assets/images/shop/b.jpg" alt="img" style="width:50px;height:50px">
+                        <div class="p-details">
+                            <h2>سيارات مستعمله</h2>
+                            <h2>5$</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="/motors">
+                    <div class="product">
+                        <img src="assets/images/shop/1.jpg" alt="img" style="width:50px;height:50px"> 
+                        <div class="p-details">
+                            <h2>موتوسيكلات</h2>
+                            <h2>5$</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="/boats">
+                    <div class="product">
+                        <img src="assets/images/shop/111.jpg" alt="img" style="width:50px;height:50px"> 
+                        <div class="p-details">
+                            <h2>قوارب</h2>
+                            <h2>5$</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="/show-room">
+                    <div class="product">
+                        <div class="p-details">
+                            <h2>العروض</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="/latest-news">
+                    <div class="product">
+                        <div class="p-details">
+                            <h2>اخر الاخبار</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Cart-Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <table class="show-cart table">
+                <!-- Cart items will be dynamically inserted here -->
+            </table>
+            <div>Total price: $<span class="total-cart"></span></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary order-now">Order now</button>
+            </div>
+        </div>
+        </div>
+    </div> 
+    <!-- order-message-container -->
+    <div class="order-message-container"></div>
+    <!-- Wishlist-Modal -->
+    <div class="modal fade" id="wishlist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Wishlist</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-wishlist table">
+                        <!-- Wishlist items will be dynamically inserted here -->
+                    </table>
+                    <div>Total items: <span class="wishlist-total-count"></span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn move-to-cart btn-primary">Move to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- wishlist-message-container -->
+    <div class="wishlist-message-container"></div>
+</div>

@@ -1,0 +1,150 @@
+/*------------------------
+  footer
+----------------------*/
+.footer {
+    width: 100%;
+    padding-top: 1px;
+    display: block;
+    margin-top: 0;
+    background-color: var(--color-bg);
+    color: var(--white-color);
+  
+    /*------------------------
+      footer-container
+    ----------------------*/
+    .footer-container {
+      margin-top: 35px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+  
+      /*------------------------
+        footer-box
+      ----------------------*/
+      .footer-box {
+        width: 30%;
+  
+        ul.links {
+          padding: 20px;
+        }
+  
+        h4 {
+          color: var(--white-color);
+          font-size: 17px;
+          font-family: "FontAwesome";
+          position: relative;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: bold;
+  
+          &::before {
+            border-bottom: 2px solid var(--red-color);
+            content: "";
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            bottom: -5px;
+            left: -3px;
+          }
+        }
+  
+        p {
+          color: var(--shape-color);
+          font-weight: 400;
+          font-size: 14px;
+          padding-top: 14px;
+        }
+  
+        button {
+          background-color: var(--red-color);
+          border: none;
+          color: var(--white-color);
+          border-radius: 10px;
+          padding: 5px;
+          margin-bottom: 7px;
+  
+          &:hover {
+            background-color: var(--red-hover-color);
+          }
+        }
+  
+        ul li a {
+          color: var(--shape-color);
+          text-decoration: none;
+  
+          &:hover {
+            color: var(--red-color);
+          }
+        }
+      }
+  
+      i.fas.fa-map-marker-alt,
+      i.fas.fa-phone-square {
+        margin-inline: 10px;
+      }
+    }
+  
+    /*------------------------
+      footer-box2-contact-icon
+    ----------------------*/
+    ul.contact-icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  
+    .fab {
+      font-family: "FontAwesome";
+    }
+  
+    /*------------------------
+      newsletter-box 
+    ----------------------*/
+    .newsletter-box {
+      margin-top: 15px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  
+      .form-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+  
+      input {
+        height: 40px;
+        border: none;
+        padding: 0 10px;
+        background: var(--white-color);
+        border-radius: 0;
+        width: 100%;
+      }
+  
+      i {
+        margin-left: 10px;
+        font-size: 18px;
+      }
+    }
+  
+    /*------------------------
+      copyright
+    ----------------------*/
+    .copyright-container {
+      border-top: 1px solid;
+      opacity: 0.5;
+      padding: 8px;
+  
+      p a {
+        color: var(--red-color);
+        text-decoration: none;
+  
+        &:hover {
+          color: var(--white-color);
+        }
+      }
+    }
+  }

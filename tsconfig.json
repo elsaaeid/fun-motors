@@ -24,6 +24,10 @@
       "dom"
     ]
   },
+  "include": [
+    "src/**/*.ts",
+    "src/assets/**/*" // Ensure assets are included
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
