@@ -13,48 +13,17 @@
           right: 15px;
           text-align: center;
           background: var(--color-bg);
-        }
-      
-        .mobile-container {
-          display: none;
-          flex-direction: row;
-          justify-content: space-evenly;
-          align-items: center;
-          list-style: none;
-          margin: auto;
-          width: 100%;
-        }
-      
-        ul#tabLinks {
-          li {
-            border-bottom: 1px solid var(--white-color);
-            list-style: none;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+          ul#tabLinks {
+            li {
+              border-bottom: 1px solid var(--white-color);
+              list-style: none;
+              height: 45px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
           }
-        }
-      
-        .selectRegister {
-          display: none;
-          text-align: center;
-          padding: 20px 0;
-          transition: 1s height ease-in-out;
-          position: absolute;
-          right: 20px;
-          width: 25%;
-          background: var(--color-bg);
-        }
-      
-        .option {
-          border-bottom: 1px solid var(--white-color);
-          padding-top: 11px;
-          transition: 1s height ease-in-out;
-        }
-      
-        .input-group-addon.close-search i {
-          color: var(--color-bg);
         }
       }
       
@@ -142,15 +111,6 @@
         justify-content: space-between;
         align-items: center;
       
-        ul.list-inline {
-          padding-inline: 10px;
-          display: flex;
-          flex-direction: row;
-          margin-left: 53px;
-          margin-top: 6px;
-          float: left;
-        }
-      
         .bottom-nav-list-inline2 {
           display: flex;
           flex-direction: row;
@@ -164,65 +124,36 @@
             flex-direction: row;
             padding-inline: 15px;
             justify-content: center;
+
+            #button-basic:hover .dropdown-toggle::after {
+              rotate: 180deg;
           }
-        }
-      
-        .logo img {
-          width: 100%;
-          height: 100%;
-        }
-      
-        .menu-nav-link, 
-        .nav-link {
-          text-decoration: none;
-          color: var(--white-color);
-          cursor: pointer;
-      
-          &:hover {
-            color: var(--color-bg);
+             /*-----------------------dropdown----------------------*/
+             .dropdown-menu {
+              background-color: var(--color-bg);
+              color: var(--white-color);      
+            }
+          }
+          .menu-nav-link, 
+          .nav-link {
             text-decoration: none;
+            color: var(--white-color);
+            cursor: pointer;
+        
+            &:hover {
+              color: var(--color-bg);
+              text-decoration: none;
+            }
           }
+      
         }
-      
-        .menu-nav-link:hover {
-          color: var(--red-color);
-          text-decoration: none;
-        }
-      }
-      
-      /*------------------------
-           dropdown
-      ----------------------*/
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      
-        .dropdown-menu {
-          background-color: var(--color-bg);
-          color: var(--white-color);
+        .mobile-container {
           display: none;
-          text-align: center;
-          box-shadow: 9px 9px 30px 0px var(--shadow-color);
-          margin-top: -5px;
-          left: auto;
-      
-          li.drobmenu-li-noborder {
-            height: 75px;
-            margin-top: 0px;
-          }
-      
-          .drobmenu-li {
-            border-bottom: 1px solid var(--white-color);
-          }
-        }
-      
-        &:hover {
-          .dropdown-menu {
-            display: block;
-          }
-      
-          .dropdown-toggle::after {
-            rotate: 180deg;
-          }
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          list-style: none;
+          margin: auto;
+          width: 100%;
         }
       }

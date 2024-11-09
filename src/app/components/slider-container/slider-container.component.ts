@@ -10,7 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./slider-container.component.scss']
 })
 export class SliderContainerComponent {
-  currentIndex = 0;
+  itemsPerSlide = 5;
+  myInterval = 1500;
+  activeSlideIndex = 0;
 
   // Define the slides property
   slides = [
@@ -29,14 +31,21 @@ export class SliderContainerComponent {
     {
       image: 'assets/images/shop/five-img.jpg',
     },
+    {
+      image: 'assets/images/shop/six-img.jpg',
+    },
+    {
+      image: 'assets/images/shop/seven-img.jpg',
+    },
+    {
+      image: 'assets/images/shop/eight-img.jpg',
+    },
+    {
+      image: 'assets/images/shop/nine-img.jpg',
+    },
+    {
+      image: 'assets/images/shop/ten-img.jpg',
+    },
     // Add more slides as needed
   ];
-
-  next() {
-    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-  }
-
-  prev() {
-    this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
-  }
 }

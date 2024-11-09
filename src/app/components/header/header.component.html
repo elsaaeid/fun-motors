@@ -22,13 +22,17 @@
             <li><a href="/know-more" class="nav-link">اعرف اكتر</a></li>
             <li><a href="/latest-news" class="nav-link">اخر الاخبار</a></li>
             <li><a href="/show-room" class="nav-link">العروض</a></li>
-            <li class="dropdown">
-                <a href="#" class="menu-nav-link dropdown-toggle arrow" data-toggle="dropdown">المركبات</a>
-                <ul class="dropdown-menu">
-                    <li class="drobmenu-li"><a href="/new-cars" class="menu-nav-link">سيارات جديده</a></li>
-                    <li class="drobmenu-li"><a href="/used-cars" class="menu-nav-link">سيارات مستعمله</a></li>
-                    <li class="drobmenu-li"><a href="/motors" class="menu-nav-link">موتوسيكلات</a></li>
-                    <li class="drobmenu-li-noborder"><a href="/boats" class="menu-nav-link">قوارب</a></li>
+            <li class="btn-group" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="nav-link dropdown-toggle"
+                        aria-controls="dropdown-basic">
+                        المركبات
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+                    <li role="menuitem"><a href="/new-cars" class="dropdown-item menu-nav-link">سيارات جديده</a></li>
+                    <li role="menuitem"><a href="/used-cars" class="dropdown-item menu-nav-link">سيارات مستعمله</a></li>
+                    <li role="menuitem"><a href="/motors" class="dropdown-item menu-nav-link">موتوسيكلات</a></li>
+                    <li role="menuitem"><a href="/boats" class="dropdown-item menu-nav-link">قوارب</a></li>
                 </ul>
             </li>
             <li><a href="/" class="active menu-nav-link">الرائيسية</a></li>
@@ -43,8 +47,19 @@
                     <i class='bx bx-cart'></i>
                 </span>
             </li>
-            <li class="userIcon nav-link" id="userIcon">
-                <i class="fas fa-user"></i>
+            <li class="dropdown" dropdown>
+                <button type="button" class="btn nav-link" dropdownToggle>
+                    <i class="fas fa-user"></i>
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+                    <li role="menuitem">
+                        <a class="dropdown-item menu-nav-link" routerLink="/login">Login</a>
+                    </li>
+                    <li role="menuitem">
+                        <a class="dropdown-item menu-nav-link" routerLink="/register">Register</a>
+                    </li>
+                </ul>
             </li>
         </ul>
         <ul class="mobile-container">
@@ -71,25 +86,23 @@
     </div>
     <ul id="tabLinks">
         <li><a href="/" class="active menu-nav-link">الرائيسية</a></li>
-        <li class="dropdown">
-            <a href="#" class="menu-nav-link dropdown-toggle arrow" data-toggle="dropdown">المركبات</a>
-            <ul class="dropdown-menu">
-                <li class="drobmenu-li"><a href="/new-cars" class="menu-nav-link">سيارات جديده</a></li>
-                <li class="drobmenu-li"><a href="/used-cars" class="menu-nav-link">سيارات مستعمله</a></li>
-                <li class="drobmenu-li"><a href="/motors" class="menu-nav-link">موتوسيكلات</a></li>
-                <li id="drobmenu-li-noborder"><a href="/boats" class="menu-nav-link">قوارب</a></li>
+        <li class="btn-group" dropdown>
+            <button id="button-basic" dropdownToggle type="button" class="nav-link btn arrow dropdown-toggle"
+                    aria-controls="dropdown-basic">
+                    المركبات
+            </button>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><a href="/new-cars" class="menu-nav-link">سيارات جديده</a></li>
+                <li role="menuitem"><a href="/used-cars" class="menu-nav-link">سيارات مستعمله</a></li>
+                <li role="menuitem"><a href="/motors" class="menu-nav-link">موتوسيكلات</a></li>
+                <li role="menuitem"><a href="/boats" class="menu-nav-link">قوارب</a></li>
             </ul>
         </li>
         <li><a href="/show-room" class="menu-nav-link">العروض</a></li>
         <li><a href="/latest-news" class="menu-nav-link">اخر الاخبار</a></li>
         <li id="nav-link-hover-noborder"><a href="/know-more" class="menu-nav-link">اعرف اكتر</a></li>
     </ul>
-    <!-- select register content -->
-    <div class="selectRegister" id="selectRegister">
-        <div class="option"><a class="menu-nav-link" href="/login">login</a></div>
-        <div class="option"><a class="menu-nav-link" href="/register">register</a></div>
-    </div>
-
     <!-- Start Top Search -->
     <div class="search-container">
         <div class="top-search" style="display: none;">

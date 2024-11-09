@@ -130,7 +130,33 @@ section.banner {
       justify-content: center;
       align-items: center;
       flex-direction: column;
+
+      & a {
+        text-decoration: none;
+      }
   
+      i.fad.fa-lightbulb,
+      a.icon.fa-qrcode, 
+      a.icon.fa-line-chart {
+        font-family: "FontAwesome";
+        font-size: 40px;
+      
+        &.fa-lightbulb {
+          color: var(--orange-color);
+        }
+      
+        &.fa-qrcode {
+          color: var(--blue-color);
+        }
+      
+        &.fa-line-chart {
+          color: var(--green-color);
+        }
+      
+        &:hover {
+          color: var(--shape-color);
+        }
+      }
       h3 {
         font-size: 15px;
         color: var(--color-bg);
@@ -138,29 +164,6 @@ section.banner {
     }
   }
   
-  i.fad.fa-lightbulb,
-  a.icon.fa-qrcode, 
-  a.icon.fa-line-chart {
-    font-family: "FontAwesome";
-    text-decoration: none;
-    font-size: xxx-large;
-  
-    &.fa-lightbulb {
-      color: var(--orange-color);
-    }
-  
-    &.fa-qrcode {
-      color: var(--blue-color);
-    }
-  
-    &.fa-line-chart {
-      color: var(--green-color);
-    }
-  
-    &:hover {
-      color: var(--shape-color);
-    }
-  }
 }
   /*------------------------
      models-container

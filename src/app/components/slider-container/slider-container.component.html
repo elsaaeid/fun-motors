@@ -4,19 +4,21 @@
         <h2>Latest vehicles</h2>
     </div>
     <!-- Start slider-box  -->
-    <div class="carousel-container slider-box">
-        <carousel>
-            <slide *ngFor="let slide of slides">
-            <div class="item carousel-images">
+    <carousel class="slider-box" [itemsPerSlide]="itemsPerSlide"
+        [interval]="myInterval" 
+        [(activeSlide)]="activeSlideIndex"
+        [singleSlideOffset]="false"
+        [indicatorsByChunk]="true">
+        <slide class="carousel-images" *ngFor="let slide of slides; let index=index">
+            <div class="item">
                 <div class="img-inner-box">
-                    <img [src]="slide.image" alt="" class="slider-image" />
+                    <img [src]="slide.image" alt="image slide" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            </slide>
-        </carousel>
-    </div>
+        </slide>
+    </carousel>
     <!-- End slider-box -->
 </div>
