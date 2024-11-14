@@ -9,7 +9,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { CartComponent } from '../../components/cart/cart.component';
 import { ProductService } from '../../services/product.service';
 
-
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -45,9 +44,16 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit(): void {
+    // Check if all shipping information fields are filled
+    if (!this.shippingInfo.name || !this.shippingInfo.address || !this.shippingInfo.city || !this.shippingInfo.postalCode || !this.shippingInfo.country) {
+      alert('Please fill in all shipping information fields.');
+      return; // Stop the submission if any field is empty
+    }
+
     // Here you would typically handle the payment processing
     console.log('Processing payment for:', this.shippingInfo);
-    // After processing, you might want to clear the cart
+    
+    // After processing, clear the cart
     this.cartService.clearCart();
     this.router.navigate(['/thank-you']); // Navigate to a thank you page or confirmation
   }
@@ -56,7 +62,6 @@ export class CheckoutComponent implements OnInit {
     this.dialog.open(CartComponent);
   }
 }
-
 
 @NgModule({
   declarations: [

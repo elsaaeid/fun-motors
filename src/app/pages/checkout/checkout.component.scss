@@ -1,0 +1,99 @@
+.checkout {
+    max-width: 800px; // Set a maximum width for the checkout container
+    margin: 0 auto; // Center the container
+    padding: 20px; // Add padding for spacing
+    background-color: var(--grey-color); // Light background color for contrast
+    border-radius: 8px; // Rounded corners
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+  
+    h2 {
+      text-align: center; // Center the heading
+      margin-bottom: 20px; // Space below the heading
+    }
+  
+    h3 {
+      margin-top: 20px; // Space above section headings
+      margin-bottom: 10px; // Space below section headings
+    }
+  
+    p {
+      text-align: center; // Center text for empty cart message
+      margin: 10px 0; // Vertical spacing
+    }
+  
+    ul {
+      list-style-type: none; // Remove default list styling
+      padding: 0; // Remove padding
+      margin: 20px 0; // Space around the list
+  
+      li {
+        display: flex; // Use flexbox for item layout
+        align-items: center; // Center items vertically
+        margin-bottom: 15px; // Space between items
+  
+        img {
+          width: 50px; // Fixed width for images
+          height: 50px; // Fixed height for images
+          margin-right: 15px; // Space between image and text
+        }
+  
+        div {
+          flex-grow: 1; // Allow text to take remaining space
+        }
+      }
+    }
+  
+    form {
+      display: flex; // Use flexbox for form layout
+      flex-direction: column; // Stack form elements vertically
+      margin-top: 20px; // Space above the form
+  
+      label {
+        margin: 10px 0 5px; // Space around labels
+      }
+  
+      input {
+        padding: 10px; // Padding inside input fields
+        border: 1px solid var(--grey-color);  // Border styling
+        border-radius: 4px; // Rounded corners
+        margin-bottom: 15px; // Space below input fields
+  
+        &:focus {
+          border-color: var(--red-color);  // Change border color on focus
+          outline: none; // Remove default outline
+        }
+      }
+  
+      button {
+        padding: 10px; // Padding for buttons
+        background-color: var(--red-color);  // Primary button color
+        color: var(--white-color);  // Text color
+        border: none; // Remove border
+        border-radius: 4px; // Rounded corners
+        cursor: pointer; // Pointer cursor on hover
+  
+        &:hover {
+          background-color: var(--red-hover-color);  // Darker shade on hover
+        }
+      }
+    }
+  
+    @media (max-width: 600px) {
+      padding: 10px; // Reduce padding on smaller screens
+  
+      h2 {
+        font-size: 1.5em; // Adjust heading size
+      }
+  
+      h3 {
+        font-size: 1.2em; // Adjust section heading size
+      }
+  
+      ul {
+        li {
+          flex-direction: column; // Stack image and text vertically on small screens
+          align-items: flex-start; // Align items to the start
+        }
+      }
+    }
+  }
