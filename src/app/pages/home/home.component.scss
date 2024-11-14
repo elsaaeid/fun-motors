@@ -33,7 +33,7 @@ section.banner {
       &:before {
         transition: opacity 3s ease;
         transition-delay: 1.25s;
-        background: var(--color-bg);
+        background: var(--black-color);
         content: "";
         display: block;
         height: 100%;
@@ -159,7 +159,7 @@ section.banner {
       }
       h3 {
         font-size: 15px;
-        color: var(--color-bg);
+        color: var(--black-color);
       }
     }
   }
@@ -179,7 +179,7 @@ section.banner {
     .model-caption {
       width: 100%;
       text-align: center;
-      color: var(--color-bg);
+      color: var(--black-color);
     }
   
     /*------------------------

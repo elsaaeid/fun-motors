@@ -1,11 +1,11 @@
 /*---------------------------------------latest-news--------------------------------------------*/  
   .our-team {
-    box-shadow: 0 0 0 var(--color-bg);
+    box-shadow: 0 0 0 var(--black-color);
     position: relative;
     transition: all 0.3s ease 0s;
   
     &:hover {
-      box-shadow: 0 0 10px var(--color-bg);
+      box-shadow: 0 0 10px var(--black-color);
     }
   
     img {
@@ -19,7 +19,7 @@
     }
   
     .team-content {
-      color: var(--color-bg);
+      color: var(--black-color);
       opacity: 1;
       position: absolute;
       bottom: 0;
@@ -62,7 +62,7 @@
             width: 35px;
             height: 35px;
             line-height: 35px;
-            background: var(--color-bg);
+            background: var(--black-color);
             font-size: 17px;
             color: var(--white-color);
             opacity: 0.9;

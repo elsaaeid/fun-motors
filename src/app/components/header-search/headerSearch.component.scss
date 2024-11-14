@@ -1,0 +1,31 @@
+// src/app/components/header-search/headerSearch.component.scss
+
+$border-color: #ccc;
+$border-radius: 4px;
+$margin: 20px;
+$padding: 10px;
+$product-border-color: #ddd;
+
+.search-container {
+  margin: $margin;
+
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100vh;
+
+    .product {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border: 1px solid $product-border-color;
+      padding: $padding;
+      border-radius: $border-radius;
+
+      .p-details {
+        margin-left: 10px;
+      }
+    }
+  }
+}

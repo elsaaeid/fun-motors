@@ -1,335 +1,90 @@
-<!-- start headline-->
+<!-- Start headline -->
 <div class="headline">
     <div class="bann">
         <ol class="list-style">
-            <li><a href="new-cars.html" class="actived">موتوسيكلات</a></li>
-            <li><a href="new-cars.html" class="actived">المركبات</a></li>
+            <li><a href="motors.html" class="actived">موتوسيكلات</a></li>
+            <li><a href="motors.html" class="actived">المركبات</a></li>
         </ol>
-        <h1><strong><a href="index.html" class="actived"> الرائيسية</a></strong></h1>
+        <h1><strong><a href="index.html" class="actived">الرائيسية</a></strong></h1>
     </div>
 </div>
-<!-- end headline -->
-<!-- Start Gallery  -->
+<!-- End headline -->
+
+<!-- Start motors -->
 <div class="products-box">
     <div class="container-fluid">
-                <div class="title-all text-center">
-                    <h2 class="finish">التصفيه</h2>
+        <div class="title-all">
+            <h2 class="finish">التصفيه</h2>
+        </div>
+        <div class="product-caption">
+            <div class="special-menu text-center">
+                <input
+                    type="text"
+                    [(ngModel)]="searchTerm"
+                    (input)="onSearch()"
+                    placeholder="ابحث عن السيارات..."
+                    class="search-input"
+                />
+                
+                <div class="button-group filter-button-group" id="mybuttons">
+                    <select class="order-by" [(ngModel)]="selectedOrganize" (change)="onOrganizeChange()">
+                        <option value="">رتب حسب</option>
+                        <option *ngFor="let organize of lists" [value]="organize">{{ organize }}</option>
+                    </select>
                 </div>
-                <div class="product-caption">
-                    <button class="order-by dropdown-toggle arrow nav-link-hover" data-toggle="dropdown">رتب
-                        حسب</button>
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group" id="mybuttons" style="display: none;">
-                            <ul>
-                                <li><button class="active" data-filter="*">الكل</button></li>
-                                <li class="bor-two"><button data-filter=".huge">السعر الاعلى للسعر الاقل</button>
-                                </li>
-                                <li class="bor-three"><button data-filter=".less">السعر الاقل للسعر الاعلى</button>
-                                </li>
-                                <li class="bor-four"><button data-filter=".fav">المميز</button></li>
-                                <li class="bor-one"><button data-filter=".modern">الاحدث</button></li>
-                            </ul>
-                        </div>
-                    </div>      
-                </div>
-          <div class="row special-list">
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid huge">
+            </div>      
+        </div>
+        <div class="row special-list">
+            <div *ngFor="let product of filteredProducts" class="col-lg-3 col-md-6 col-sm-12 special-grid huge">
                 <div class="products-single fix">
                     <div class="box-img-hover">
                         <div class="type-lb">
-                            <p class="new">New</p>
+                            <p class="new" *ngIf="product.isFeatured">جديد</p>
                         </div>
-                        <img src="assets/images/shop/1.jpg" class="img-fluid" alt="Image">
+                        <img [src]="product.imageUrl" class="img-fluid" alt="{{ product.name }}">
                         <div class="mask-icon">
                             <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                <li>
+                                    <a
+                                       (click)="openModal(product.imageUrl, product.name)" 
+                                       data-toggle="tooltip" 
+                                       class="image-view" 
+                                       data-placement="right" 
+                                       title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </li>
                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                 <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/1.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
+                                    <a
+                                       data-name="{{ product.name }}" 
+                                       [attr.data-price]="product.price" 
+                                       [attr.data-image]="product.imageUrl" 
+                                       class="wishlist add-to-wishlist btn">
                                         <i class="far fa-heart"></i>
                                     </a>
                                 </li>
                             </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/1.jpg" class="cart add-to-cart btn">Add to Cart</a>
+                            <a href="#" 
+                               data-name="{{ product.name }}" 
+                               [attr.data-price]="product.price" 
+                               [attr.data-image]="product.imageUrl" 
+                               class="cart add-to-cart btn">أضف إلى السلة</a>
                         </div>
                     </div>
                     <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid less">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/2.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/2.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/2.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid huge">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/3.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/3.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/3.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid less">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/4.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/4.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/4.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid huge">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/5.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/5.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/5.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid less">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/6.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/6.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/6.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid fav">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/7.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/7.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/7.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid modern">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/8.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/8.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/8.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid modern">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/9.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/9.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/9.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid fav">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/10.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/10.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/10.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid modern">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/11.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/11.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/11.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-12 special-grid fav">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <img src="assets/images/shop/12.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" class="image-view" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li>
-                                    <a href="#" data-toggle="tooltip" data-placement="right" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/12.jpg" title="Add to Wishlist" class="wishlist add-to-wishlist btn">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="#" data-name="Hyundai" data-price="66.800" data-image="assets/images/shop/12.jpg" class="cart add-to-cart btn">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h4 class="card-title">Hyundai</h4>
-                        <p class="card-text">Price: E 66.800</p>
+                        <h4 class="card-title">{{ product.name }}</h4>
+                        <p class="card-text">السعر: E {{ product.price }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- start myModal -->
-        <div id="myModal" class="modal">
-            <span class="myModal-close">&times;</span>
-            <img class="modal-content img-fluid" id="img01">
-            <div id="caption"></div>
+        <!-- Start myModal -->
+        <div id="myModal" class="modal" [ngClass]="{'show': isModalOpen}" (click)="closeModal()">
+            <span class="myModal-close" (click)="closeModal()">&times;</span>
+            <img class="modal-content img-fluid" [src]="modalImage" id="img01">
+            <div id="caption">{{ modalCaption }}</div>
         </div>
     </div>
 </div>
-<!-- End Gallery  -->
+<!-- End motors -->

@@ -23,19 +23,23 @@
             <li><a href="/latest-news" class="nav-link">اخر الاخبار</a></li>
             <li><a href="/show-room" class="nav-link">العروض</a></li>
             <li class="boats-item">
-                <span class="dropdown-item menu-nav-link">
-                        المركبات
-                        <i class="fa fa-caret-down"></i>
+                <span class="nav-link">
+                    المركبات
+                    <i class="fa fa-caret-down"></i>
                 </span>
                 <ul class="dropdown-boats">
-                    <li role="menuitem"><a href="/new-cars" class="dropdown-boats-item menu-nav-link">سيارات جديده</a></li>
-                    <li role="menuitem"><a href="/used-cars" class="dropdown-boats-item menu-nav-link">سيارات مستعمله</a></li>
-                    <li role="menuitem"><a href="/motors" class="dropdown-boats-item menu-nav-link">موتوسيكلات</a></li>
-                    <li role="menuitem"><a href="/boats" class="dropdown-boats-item menu-nav-link">قوارب</a></li>
+                    <li mat-menu-item><a routerLink="/new-cars" class="menu-nav-link">سيارات جديده</a></li>
+                    <li mat-menu-item><a routerLink="/used-cars" class="menu-nav-link">سيارات مستعمله</a></li>
+                    <li mat-menu-item><a routerLink="/motors" class="menu-nav-link">موتوسيكلات</a></li>
+                    <li mat-menu-item><a routerLink="/boats" class="menu-nav-link">قوارب</a></li>
                 </ul>
             </li>
-            <li><a href="/" class="active menu-nav-link">الرائيسية</a></li>
-            <li class="search nav-link"><i class="fa fa-search"></i></li>
+            <li><a href="/" class="active nav-link">الرائيسية</a></li>
+            <li 
+                class="search nav-link"
+                mat-button (click)="openDialog()">
+                <i class="fa fa-search"></i>
+            </li>
             <li class="nav-link btn" data-toggle="modal" data-target="#wishlist">
                 <sup><span class="wishlist-total-count"></span></sup>
                 <i class='bx bx-heart'></i>
@@ -46,19 +50,20 @@
                     <i class='bx bx-cart'></i>
                 </span>
             </li>
-            <li dropdown class="dropdown user-item">
-                <span class="nav-link" dropdownToggle>
-                    <i class="fas fa-user"></i>
-                </span>
-                <ul class="dropdown-menu dropdown-user" id="dropdown-basic" *dropdownMenu
-                role="menu" aria-labelledby="button-basic">
-                    <li role="menuitem">
-                        <a class="dropdown-item menu-nav-link" routerLink="/login">Login</a>
-                    </li>
-                    <li role="menuitem">
-                        <a class="dropdown-item menu-nav-link" routerLink="/register">Register</a>
-                    </li>
-                </ul>
+            <li class="user-item">
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <span class="nav-link">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <a class="nav-link" routerLink="/login">Login</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a class="nav-link" routerLink="/register">Register</a>
+                    </button>
+                </mat-menu>
             </li>
         </ul>
         <ul class="mobile-container">
@@ -74,110 +79,62 @@
                     <i class='bx bx-cart'></i>
                 </span>
             </li>
-            <li class="search nav-link"><i class="fa fa-search"></i></li>
-            <li dropdown class="dropdown user-item">
-                <span class="nav-link" dropdownToggle>
-                    <i class="fas fa-user"></i>
-                </span>
-                <ul class="dropdown-menu dropdown-user" id="dropdown-basic" *dropdownMenu
-                role="menu" aria-labelledby="button-basic">
-                    <li role="menuitem">
-                        <a class="dropdown-item menu-nav-link" routerLink="/login">Login</a>
-                    </li>
-                    <li role="menuitem">
-                        <a class="dropdown-item menu-nav-link" routerLink="/register">Register</a>
-                    </li>
-                </ul>
+            <li 
+                class="search nav-link"
+                mat-button (click)="openDialog()">
+                <i class="fa fa-search"></i>
             </li>
-            <li class="dropdown" dropdown>
-                <button type="button" class="btn nav-link" dropdownToggle>
-                    <i class="fa fa-bars"></i>
+            <li class="user-item">
+                <button mat-button [matMenuTriggerFor]="userMenu">
+                    <span class="nav-link">
+                        <i class="fas fa-user"></i>
+                    </span>
                 </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                role="menu" aria-labelledby="button-basic">
-                    <li><a class="dropdown-item menu-nav-link" href="/">الرائيسية</a></li>
-                    <li class="boats-item">
-                        <span class="dropdown-item menu-nav-link">
-                                المركبات
-                                <i class="fa fa-caret-down"></i>
+                <mat-menu #userMenu="matMenu">
+                    <button mat-menu-item>
+                        <a class="nav-link" routerLink="/login">Login</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a class="nav-link" routerLink="/register">Register</a>
+                    </button>
+                </mat-menu>
+            </li>
+            <li>
+                <button mat-button [matMenuTriggerFor]="mainMenu">
+                    <span class="nav-link">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </button>
+                <mat-menu class="main-menu" #mainMenu="matMenu">
+                    <button mat-menu-item>
+                        <a class="nav-link" routerLink="/">الرائيسية</a>
+                    </button>
+                    <button mat-menu-item class="boats-item">
+                        <span class="nav-link">
+                            المركبات
+                            <i class="fa fa-caret-down"></i>
                         </span>
-                        <ul class="dropdown-boats">
-                            <li><a href="/new-cars" class="dropdown-item menu-nav-link">سيارات جديده</a></li>
-                            <li><a href="/used-cars" class="dropdown-item menu-nav-link">سيارات مستعمله</a></li>
-                            <li><a href="/motors" class="dropdown-item menu-nav-link">موتوسيكلات</a></li>
-                            <li><a href="/boats" class="dropdown-item menu-nav-link">قوارب</a></li>
+                        <ul class="dropdown-menu-boats">
+                            <li mat-menu-item><a routerLink="/new-cars" class="nav-link">سيارات جديده</a></li>
+                            <li mat-menu-item><a routerLink="/used-cars" class="nav-link">سيارات مستعمله</a></li>
+                            <li mat-menu-item><a routerLink="/motors" class="nav-link">موتوسيكلات</a></li>
+                            <li mat-menu-item><a routerLink="/boats" class="nav-link">قوارب</a></li>
                         </ul>
-                    </li>
-                    <li><a href="/show-room" class="dropdown-item menu-nav-link">العروض</a></li>
-                    <li><a href="/latest-news" class="dropdown-item menu-nav-link">اخر الاخبار</a></li>
-                    <li id="nav-link-hover-noborder"><a href="/know-more" class="dropdown-item menu-nav-link">اعرف اكتر</a></li>
-                </ul>
+                    </button>
+                    <button mat-menu-item>
+                        <a routerLink="/show-room" class="nav-link">العروض</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a routerLink="/latest-news" class="nav-link">اخر الاخبار</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a routerLink="/know-more" class="nav-link">اعرف اكتر</a>
+                    </button>
+                </mat-menu>
             </li>
         </ul>
     </div>
-    <!-- Start Top Search -->
-    <div class="search-container">
-        <div class="top-search" style="display: none;">
-            <div id="input-group">
-                <input onkeyup="search()" type="text" class="form-control" placeholder="Search" id="search-item">
-                <span class="input-group-addon close-search"><i class="fa fa-times fixed"></i></span>
-            </div>
-            <div class="product-list" id="product-list" style="display:none;">
-                <a href="/new-cars">
-                    <div class="product">
-                        <img src="assets/images/shop/a.jpg" alt="img" style="width:50px;height:50px">
-                        <div class="p-details">		
-                            <h2>سيارات جديده</h2>
-                            <h2>5$</h2>
-                        </div>
-                    </div>
-                </a>
-                <a href="/used-cars">
-                    <div class="product">
-                        <img src="assets/images/shop/b.jpg" alt="img" style="width:50px;height:50px">
-                        <div class="p-details">
-                            <h2>سيارات مستعمله</h2>
-                            <h2>5$</h2>
-                        </div>
-                    </div>
-                </a>
-                <a href="/motors">
-                    <div class="product">
-                        <img src="assets/images/shop/1.jpg" alt="img" style="width:50px;height:50px"> 
-                        <div class="p-details">
-                            <h2>موتوسيكلات</h2>
-                            <h2>5$</h2>
-                        </div>
-                    </div>
-                </a>
-                <a href="/boats">
-                    <div class="product">
-                        <img src="assets/images/shop/111.jpg" alt="img" style="width:50px;height:50px"> 
-                        <div class="p-details">
-                            <h2>قوارب</h2>
-                            <h2>5$</h2>
-                        </div>
-                    </div>
-                </a>
-                <a href="/show-room">
-                    <div class="product">
-                        <div class="p-details">
-                            <h2>العروض</h2>
-                        </div>
-                    </div>
-                </a>
-                <a href="/latest-news">
-                    <div class="product">
-                        <div class="p-details">
-                            <h2>اخر الاخبار</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-
+    
     <!-- Cart-Modal -->
     <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
