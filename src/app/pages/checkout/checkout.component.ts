@@ -12,7 +12,6 @@ import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-checkout',
-  standalone: true,
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss'],
   providers: [ProductService],
@@ -61,12 +60,12 @@ export class CheckoutComponent implements OnInit {
 
 @NgModule({
   declarations: [
-    CheckoutComponent, // Declare the component here
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule, // Ensure FormsModule is imported here
+    FormsModule,
   ],
-  bootstrap: [CheckoutComponent] // Bootstrap the component if this is the main module
+  bootstrap: [CheckoutComponent]
 })
-export class AppModule { } // Or whatever your main module is called
+export class AppModule { }
