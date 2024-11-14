@@ -4,6 +4,7 @@ import { ProductService } from '../../services/product.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../../services/cart-service';
 
 // Define the component
 @Component({
@@ -27,7 +28,7 @@ export class NewCarsComponent implements OnInit {
   public modalCaption: string = ''; // To hold the caption for the modal
   public isModalOpen: boolean = false; // To control modal visibility
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private cartService: CartService) {} // Inject CartService
 
   ngOnInit(): void {
     this.loadProducts();
@@ -74,6 +75,11 @@ export class NewCarsComponent implements OnInit {
     this.filteredProducts = sortedProducts; // Update filtered products
   }
 
+   // Add product to cart
+   public addToCart(product: Product): void {
+    this.cartService.addToCart(product); // Call the service to add the product to the cart
+  }
+
   // Filter products based on the selected criteria
   public filterProducts(criteria: string): void {
     if (criteria === '*') {
@@ -83,7 +89,6 @@ export class NewCarsComponent implements OnInit {
     }
   }
 
-  
   // Open modal with the selected image
   public openModal(imageUrl: string, caption: string): void {
     this.modalImage = imageUrl;

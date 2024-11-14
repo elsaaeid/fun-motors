@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductService } from '../../services/product.service';
 import { headerSearchComponent } from '../header-search/headerSearch.component';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +26,12 @@ import { headerSearchComponent } from '../header-search/headerSearch.component';
 export class HeaderComponent {
   readonly dialog = inject(MatDialog);
 
-  openDialog() {
+
+  openSearch() {
     this.dialog.open(headerSearchComponent);
+  }
+
+  openCart() {
+    this.dialog.open(CartComponent);
   }
 }

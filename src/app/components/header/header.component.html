@@ -37,14 +37,17 @@
             <li><a href="/" class="active nav-link">الرائيسية</a></li>
             <li 
                 class="search nav-link"
-                mat-button (click)="openDialog()">
+                mat-button (click)="openSearch()">
                 <i class="fa fa-search"></i>
             </li>
             <li class="nav-link btn" data-toggle="modal" data-target="#wishlist">
                 <sup><span class="wishlist-total-count"></span></sup>
                 <i class='bx bx-heart'></i>
             </li>
-            <li>
+            <li
+                class="search nav-link"
+                mat-button (click)="openCart()"
+                >
                 <span class="nav-link btn" data-toggle="modal" data-target="#cart">
                     <sup><span class="total-count"></span></sup>
                     <i class='bx bx-cart'></i>
@@ -73,7 +76,10 @@
                     <i class='far fa-heart'></i>
                 </span>
             </li>
-            <li>
+            <li
+                class="search nav-link"
+                mat-button (click)="openCart()"
+                >
                 <span class="nav-link btn" data-toggle="modal" data-target="#cart">
                     <sup><span class="total-count"></span></sup>
                     <i class='bx bx-cart'></i>
@@ -81,7 +87,7 @@
             </li>
             <li 
                 class="search nav-link"
-                mat-button (click)="openDialog()">
+                mat-button (click)="openSearch()">
                 <i class="fa fa-search"></i>
             </li>
             <li class="user-item">

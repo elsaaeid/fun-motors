@@ -107,6 +107,9 @@ $fun-motors-theme: mat.define-theme((
     display: flex;
     flex-direction: column;
   }
+  .pages-content {
+    margin-top: 130px;
+  }
   .search-input {
     width: 100%;
     padding: $padding;

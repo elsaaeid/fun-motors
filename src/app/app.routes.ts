@@ -11,26 +11,20 @@ import { NewCarsComponent } from './pages/new-cars/new-cars.component';
 import { UsedCarsComponent } from './pages/used-cars/used-cars.component';
 import { MotorsComponent } from './pages/motors/motors.component';
 import { BoatsComponent } from './pages/boats/boats.component';
-import { LayoutComponent } from './components/layout/layout.component';
+
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { 
-        path: '', 
-        component: LayoutComponent, 
-        children: [
-            { path: 'show-room', component: ShowRoomComponent },
-            { path: 'know-more', component: KnowMoreComponent },
-            { path: 'latest-news', component: LatestNewsComponent },
-            { path: 'new-cars', component: NewCarsComponent },
-            { path: 'used-cars', component: UsedCarsComponent },
-            { path: 'motors', component: MotorsComponent },
-            { path: 'boats', component: BoatsComponent },
-        ]
-    },
+    { path: 'show-room', component: ShowRoomComponent },
+    { path: 'know-more', component: KnowMoreComponent },
+    { path: 'latest-news', component: LatestNewsComponent },
+    { path: 'new-cars', component: NewCarsComponent },
+    { path: 'used-cars', component: UsedCarsComponent },
+    { path: 'motors', component: MotorsComponent },
+    { path: 'boats', component: BoatsComponent },
     { path: '**', component: Error404ViewsComponent } // Catch-all route for invalid URLs
 ];
 

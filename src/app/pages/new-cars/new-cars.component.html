@@ -1,15 +1,3 @@
-<!-- Start headline -->
-<div class="headline">
-    <div class="bann">
-        <ol class="list-style">
-            <li><a href="new-cars.html" class="actived">سيارات جديده</a></li>
-            <li><a href="new-cars.html" class="actived">المركبات</a></li>
-        </ol>
-        <h1><strong><a href="index.html" class="actived">الرائيسية</a></strong></h1>
-    </div>
-</div>
-<!-- End headline -->
-
 <!-- Start new-cars -->
 <div class="products-box">
     <div class="container-fluid">
@@ -65,7 +53,8 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a href="#" 
+                            <a
+                               (click)="addToCart(product)"
                                data-name="{{ product.name }}" 
                                [attr.data-price]="product.price" 
                                [attr.data-image]="product.imageUrl" 
