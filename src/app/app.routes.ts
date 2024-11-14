@@ -11,6 +11,8 @@ import { NewCarsComponent } from './pages/new-cars/new-cars.component';
 import { UsedCarsComponent } from './pages/used-cars/used-cars.component';
 import { MotorsComponent } from './pages/motors/motors.component';
 import { BoatsComponent } from './pages/boats/boats.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 
 
 export const routes: Routes = [
@@ -25,6 +27,8 @@ export const routes: Routes = [
     { path: 'used-cars', component: UsedCarsComponent },
     { path: 'motors', component: MotorsComponent },
     { path: 'boats', component: BoatsComponent },
+    { path: 'checkout', component: CheckoutComponent },
+    { path: 'thank-you', component: ThankYouComponent },
     { path: '**', component: Error404ViewsComponent } // Catch-all route for invalid URLs
 ];
 

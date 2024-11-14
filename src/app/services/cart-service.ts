@@ -1,3 +1,4 @@
+// src/app/services/cart.service.ts
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 
@@ -8,15 +9,34 @@ export class CartService {
   private cartItems: Product[] = [];
 
   addToCart(product: Product): void {
-    this.cartItems.push(product);
-    console.log('Product added to cart:', product);
+    const existingProduct = this.cartItems.find(item => item.id === product.id);
+    if (existingProduct) {
+      existingProduct.quantity!++; // Increment quantity if product already exists
+    } else {
+      product.quantity = 1; // Initialize quantity for new product
+      this.cartItems.push(product);
+    }
   }
 
   getCartItems(): Product[] {
     return this.cartItems;
   }
 
-  getTotalCount(): number {
-    return this.cartItems.length;
+  updateCartItem(updatedProduct: Product): void {
+    const existingProduct = this.cartItems.find(item => item.id === updatedProduct.id);
+    if (existingProduct) {
+      existingProduct.quantity = updatedProduct.quantity; // Update quantity
+    }
   }
+
+  removeFromCart(product: Product): void {
+    this.cartItems = this.cartItems.filter(item => item.id !== product.id);
+  }
+
+  getCartTotalCount(): number {
+    return this.cartItems.reduce((total, item) => total + (item.quantity || 0), 0);
+  }
+  clearCart(): void {
+    this.cartItems = [];
+}
 }

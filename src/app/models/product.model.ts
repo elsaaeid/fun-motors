@@ -8,4 +8,5 @@ export interface Product {
   category: string; // Add this line to include the category
   isFeatured?: boolean; // Indicates if the product is featured (for "المميز" filter)
   dateAdded?: Date;   // Date when the product was added (for "الاحدث" filter)
+  quantity?: number; // Add this line to include quantity
 }
