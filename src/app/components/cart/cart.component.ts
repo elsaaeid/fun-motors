@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; // Import Router
 import { Product } from '../../models/product.model';
+import { Router } from '@angular/router'; // Import Router for navigation
 import { CartService } from '../../services/cart-service';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class CartComponent implements OnInit {
   public cartItems: Product[] = [];
 
-  constructor(private cartService: CartService, private router: Router) {} // Inject Router
+  constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadCartItems();
@@ -44,12 +48,14 @@ export class CartComponent implements OnInit {
     return this.cartItems.reduce((total, item) => total + (item.quantity || 0), 0);
   }
 
+  // Implement the calculateTotalPrice method
   calculateTotalPrice(): number {
     return this.cartItems.reduce((total, item) => total + (item.price * (item.quantity || 1)), 0);
   }
 
+  // Implement the checkout method
   checkout(): void {
-    // Navigate to the checkout page
+    // Navigate to the checkout page or perform checkout logic
     this.router.navigate(['/checkout']); // Adjust the route as necessary
   }
 }
