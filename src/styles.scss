@@ -102,6 +102,10 @@ $fun-motors-theme: mat.define-theme((
 
   .app-container {
     position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   .search-input {
     width: 100%;
@@ -426,7 +430,7 @@ $fun-motors-theme: mat.define-theme((
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    
+    margin-top: 150px;
   
   .login-content {
     align-items: center;
