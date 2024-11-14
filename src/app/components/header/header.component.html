@@ -42,8 +42,7 @@
                 <i class="fa fa-search"></i>
             </li>
             <li 
-
-                class="nav-link btn" 
+                class="nav-link flex flex-row" 
                 data-toggle="modal" 
                 mat-button 
                 (click)="openWishList()">
@@ -54,7 +53,7 @@
                 class="cart nav-link" 
                 mat-button 
                 (click)="openCart()">
-                <span class="nav-link btn">
+                <span class="nav-link flex flex-row">
                     <sup><span class="total-count">{{ cartTotalCount }}</span></sup>
                     <i class='bx bx-cart'></i>
                 </span>
@@ -76,24 +75,27 @@
             </li>
         </ul>
         <ul class="mobile-container">
-            <li>
-                <span class="nav-link btn" data-toggle="modal" data-target="#wishlist">
-                    <sup><span class="wishlist-total-count"></span></sup>
-                    <i class='far fa-heart'></i>
-                </span>
+            <li 
+                class="nav-link flex flex-row" 
+                data-toggle="modal" 
+                mat-button 
+                (click)="openWishList()">
+                <sup><span class="wishlist-total-count">{{ wishlistCount }}</span></sup>
+                <i class='bx bx-heart'></i>
             </li>
-            <li
-                class="search nav-link"
-                mat-button (click)="openCart()"
-                >
-                <span class="nav-link btn" data-toggle="modal" data-target="#cart">
-                    <sup><span class="total-count"></span></sup>
+            <li 
+                class="cart nav-link" 
+                mat-button 
+                (click)="openCart()">
+                <span class="nav-link flex flex-row">
+                    <sup><span class="total-count">{{ cartTotalCount }}</span></sup>
                     <i class='bx bx-cart'></i>
                 </span>
             </li>
             <li 
                 class="search nav-link"
-                mat-button (click)="openSearch()">
+                mat-button 
+                (click)="openSearch()">
                 <i class="fa fa-search"></i>
             </li>
             <li class="user-item">

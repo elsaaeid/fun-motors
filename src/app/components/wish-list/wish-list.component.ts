@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-wish-list',
+  standalone: true,
   templateUrl: './wish-list.component.html',
   styleUrls: ['./wish-list.component.scss'],
   imports: [FormsModule, MatDialogModule, CommonModule],

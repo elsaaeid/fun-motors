@@ -19,7 +19,7 @@
     </div>
     <div *ngIf="cartItems.length > 0">
         <h4>Total Count: {{ totalCount }}</h4>
-        <h4>Total Price: E {{ cartItems.reduce((total, item) => total + (item.price * item.quantity), 0) }}</h4>
+        <h4>Total Price: E {{ calculateTotalPrice() }}</h4>
         <button (click)="checkout()" class="checkout-button">Checkout</button>
     </div>
 </div>
