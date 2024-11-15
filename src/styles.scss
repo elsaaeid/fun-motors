@@ -58,6 +58,13 @@ $fun-motors-theme: mat.define-theme((
   $modal-content-max-width: 700px;
   $caption-color: white;
 
+  @mixin between-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   // Global styles
   * {
     font-family: 'Poppins', sans-serif;
@@ -164,6 +171,7 @@ $fun-motors-theme: mat.define-theme((
         font-size: 20px;
         font-family: unset;
         color: var(--black-color);
+        cursor: pointer;
         
       }
     }
@@ -173,13 +181,14 @@ $fun-motors-theme: mat.define-theme((
       content: "\203A";
       margin: 0 10px;
       font-size: 30px;
-      color: var(--shape-color);
+      color: var(--red-color);
       opacity: 0.7;
       display: inline-block;
     }
   }
   strong a {
     color: var(--red-color);
+    cursor: pointer;
     font-size: 30px;
   }
 }
@@ -450,7 +459,7 @@ $fun-motors-theme: mat.define-theme((
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    margin-top: 150px;
+    margin-top: 10px;
   
   .login-content {
     align-items: center;
@@ -480,8 +489,7 @@ $fun-motors-theme: mat.define-theme((
     }
   
     .submittion {
-      width: 350px;
-      height: 350px;
+      width: max-content;
       border-radius: 14px;
       display: flex;
       flex-direction: column;
@@ -519,6 +527,8 @@ $fun-motors-theme: mat.define-theme((
         border-radius: 4px;
         color: var(--black-color);
         box-shadow: 9px 9px 30px 0px rgb(0 0 0 / 30%);
+        background-color: var(--red-color);
+        transition: background-color 0.3s ease;
     
         &:hover {
           background-color: var(--black-color);
@@ -536,22 +546,15 @@ $fun-motors-theme: mat.define-theme((
       margin-bottom: 20px;
       margin-top: 20px;
   
-      button {
-        box-shadow: 9px 9px 30px 0px var(--black-color);
-        width: 36%;
-        height: 3rem;
-        border: none;
-        border-radius: 3px;
+      span {
         font-size: 13px;
   
         a {
-          i {
-            margin-left: 10px;
-          }
+          @include between-content;
         }
       }
-      button.log-gog a i {
-        color: var(--red-color);
+      span a i {
+        color: var(--white-color);
       }
     }
   }
@@ -563,13 +566,12 @@ $fun-motors-theme: mat.define-theme((
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    height: 70px;
+    height: 50px;
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
-    color: var(--white-color);
 
-    .bott-content {
-      line-height: 78px;
+    h6 {
+      color: var(--white-color);
     }
   }
   }

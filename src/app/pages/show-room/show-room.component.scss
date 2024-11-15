@@ -213,15 +213,4 @@
     section.bottom-load {
       margin-top: 35px;
     }
-  
-    button.btn.hv-hover {
-      border: none;
-      background-color: var(--red-color);
-      color: var(--white-color);
-  
-      &:hover {
-        background: var(--shape-color);
-        color: var(--red-color);
-      }
-    }
   }
