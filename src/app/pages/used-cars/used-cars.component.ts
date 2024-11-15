@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart-service';
 import { WishlistService } from '../../services/wish-list.service';
@@ -113,7 +113,7 @@ export class UsedCarsComponent implements OnInit { // Updated class name
     UsedCarsComponent, // Updated declaration to reflect used cars component
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FormsModule, // Ensure FormsModule is imported here
   ],
   bootstrap: [UsedCarsComponent] // Bootstrap the component if this is the main module

@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { Router } from '@angular/router';
-import { RouterModule } from '@angular/router'; // Import RouterModule
 import { CartService } from '../../services/cart-service';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CartComponent } from '../../components/cart/cart.component';
@@ -14,9 +13,6 @@ import { ProductService } from '../../services/product.service';
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss'],
-  imports: [
-    RouterModule // Add RouterModule here
-  ],
   providers: [ProductService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -72,7 +68,7 @@ export class CheckoutComponent implements OnInit {
     CheckoutComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FormsModule,
   ],
   bootstrap: [CheckoutComponent]
