@@ -20,12 +20,12 @@ $fun-motors-theme: mat.define-theme((
       )
       ));
       
-      // Include theme styles for core and each component used in your app.
-      // Alternatively, you can import and @include the theme mixins for each component
-      // that you are using.
-      :root {
-        @include mat.all-component-themes($fun-motors-theme);
-      }
+    // Include theme styles for core and each component used in your app.
+    // Alternatively, you can import and @include the theme mixins for each component
+    // that you are using.
+    :root {
+      @include mat.all-component-themes($fun-motors-theme);
+    }
       
   @tailwind base;
   @tailwind components;
@@ -399,59 +399,6 @@ $fun-motors-theme: mat.define-theme((
 }
   }
 }
-  
-  
-  /* General styles for the cart */
-  .show-cart {
-    width: 100%;
-    margin: 20px 0;
-  
-    table {
-      width: 100%;
-      border-collapse: collapse;
-  
-      th,
-      td {
-        padding: 10px;
-        text-align: center;
-        border: 1px solid var(--grey-color); /* Add borders for visibility */
-      }
-    }
-  }
-  
-  .order-message-container,
-  .wishlist-message-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-  }
-  
-  @keyframes bounceY {
-    0% {
-      transform: translateY(-205px);
-    }
-    40% {
-      transform: translateY(-100px);
-    }
-    65% {
-      transform: translateY(-52px);
-    }
-    82% {
-      transform: translateY(-25px);
-    }
-    92% {
-      transform: translateY(-12px);
-    }
-    55%,
-    75%,
-    87%,
-    97%,
-    100% {
-      transform: translateY(0px);
-    }
-  }
 /*----------------------------------------login-register-page--------------------------------------------*/
   .login-container {
     display: flex;
