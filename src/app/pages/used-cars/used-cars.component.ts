@@ -6,6 +6,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart-service';
 import { WishlistService } from '../../services/wish-list.service';
+import { RouterModule } from '@angular/router';
+
+
 
 // Define the component
 @Component({
@@ -114,7 +117,8 @@ export class UsedCarsComponent implements OnInit { // Updated class name
   ],
   imports: [
     CommonModule,
-    FormsModule, // Ensure FormsModule is imported here
+    FormsModule,
+    RouterModule
   ],
   bootstrap: [UsedCarsComponent] // Bootstrap the component if this is the main module
 })

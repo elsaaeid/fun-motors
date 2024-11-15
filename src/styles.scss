@@ -35,7 +35,7 @@ $fun-motors-theme: mat.define-theme((
     --white-color: white;
     --red-color: #fc242f;
     --red-hover-color: #c90303c7;
-    --shadow-color: #0a000165;
+    --shadow-color: 0 8px 30px rgba(0, 0, 0, 0.2);
     --grey-color: #efedf0;
     --shape-color: rgba(119, 119, 119, 1);
     --gradient-bg: linear-gradient(to bottom, #303030 0%, #fc242f 100%);
@@ -418,7 +418,7 @@ $fun-motors-theme: mat.define-theme((
     padding-top: 20px;
     border-top-left-radius: 28px;
     border-top-right-radius: 28px;
-    box-shadow: 9px 9px 30px 0px var(--black-color);
+    box-shadow: var(--shadow-color);
     border: 1px solid var(--red-color);
   
     .user-circle {

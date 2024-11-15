@@ -4,21 +4,42 @@
                 <i class="fal fa-user-circle"></i>
                 <h3>Login</h3>
             </div>
-            <form class="submittion">
+            <form class="submittion" (ngSubmit)="submitLogin()">
                 <div class="input-content">
-                    <i class="fal fa-user"></i>
-                    <input type="text" name="name" placeholder="name" class="input">
+                  <i class="fal fa-user"></i>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    class="input"
+                    [(ngModel)]="name"
+                    required
+                  />
                 </div>
                 <div class="input-content">
-                    <i class="fas fa-envelope envelope"></i>
-                    <input type="text" name="email" placeholder="email" class="input">
+                  <i class="fas fa-envelope envelope"></i>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    class="input"
+                    [(ngModel)]="email"
+                    required
+                  />
                 </div>
                 <div class="input-content">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="password" class="input">
+                  <i class="fas fa-lock"></i>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    class="input"
+                    [(ngModel)]="password"
+                    required
+                  />
                 </div>
-                <input type="submit" name="login" class="log" placeholder="login">
-            </form>
+                <input type="submit" name="login" class="log" value="Login" />
+              </form>
             <div class="buttons-content"> 
                 <span class="log-face"><a href="https://www.facebook.com/" title="Facebook" target="_blank">LOGIN WITH
                     FACEBOOK<i class="fab fa-facebook-f" id="face2"></i></a></span>

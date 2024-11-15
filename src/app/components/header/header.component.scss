@@ -140,7 +140,8 @@
         border-bottom: 1px solid var(--black-color); // Add a border
         width: 100%;
         padding: 10px;
-        text-align: center;
+        display: flex;
+        justify-content: center;
       }
     }
     ul.dropdown-boats {

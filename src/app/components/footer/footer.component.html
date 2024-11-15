@@ -11,18 +11,18 @@
                 Fun motors wil help you buy/sell your car, motorbike, boat or number plate.
                 You are sure to find the right vehicle at the right price on Fun motors.com
             </p>
-            <a href="#"><button>Read More</button></a>
+            <a routerLink="/know-more"><button>Read More</button></a>
         </div>
         <div class="footer-box">
             <h4>WEBSITE LINKS</h4>
             <ul class="links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="new-cars.html">Cars for sale</a></li>
-                <li><a href="showroom.html">Showroom Deals</a></li>
-                <li><a href="used-cars.html">Cars for rent</a></li>
-                <li><a href="">Latest News</a></li>
-                <li><a href="motors.html">Bikes</a></li>
-                <li><a href="boats.html">Boats</a></li>
+                <li><a routerLink="/home">Home</a></li>
+                <li><a routerLink="/new-cars">Cars for sale</a></li>
+                <li><a routerLink="/showroom">Showroom Deals</a></li>
+                <li><a routerLink="/used-cars.html">Cars for rent</a></li>
+                <li><a routerLink="/latest-news">Latest News</a></li>
+                <li><a routerLink="/motors">Bikes</a></li>
+                <li><a routerLink="/boats">Boats</a></li>
             </ul>
         </div>
         <div class="footer-box">
@@ -48,13 +48,20 @@
                     </ul>
                 </li>
                 <li>
-                    <form class="newsletter-box">
+                    <form class="newsletter-box" (ngSubmit)="submitEmail()">
                         <div class="form-group">
-                            <input class="" type="email" name="Email" placeholder="Email Address*" />
-                            <i class="fa fa-envelope"></i>
+                          <input
+                            class="email-input"
+                            type="email"
+                            name="Email"
+                            placeholder="Email Address*"
+                            [(ngModel)]="email"
+                            required
+                          />
+                          <i class="fa fa-envelope"></i>
                         </div>
                         <button class="btn hvr-hover" type="submit">Submit</button>
-                    </form>
+                      </form>
                 </li>
             </ul>
         </div>
@@ -62,8 +69,8 @@
     <!--end footer-container -->
     <!-- copyright-container -->
     <div class="copyright-container">
-        <p class="footer-company">All Rights Reserved. &copy; 2021 <a href="#">Fun motors</a> Design By :
-            <a href="#">En:elsaaied ellisy</a>
+        <p class="footer-company">All Rights Reserved. &copy; 2021 <a routerLink="/home">Fun motors</a> Design By :
+            <a href="https://alsaaeid-ellithy11.web.app">En:elsaaied ellisy</a>
         </p>
     </div>
     <!--end copyright-container -->

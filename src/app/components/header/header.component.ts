@@ -11,6 +11,8 @@ import { CartService } from '../../services/cart-service';
 import { headerSearchComponent } from '../header-search/headerSearch.component';
 import { WishListComponent } from '../wish-list/wish-list.component';
 import { WishlistService } from '../../services/wish-list.service';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 
 @Component({
@@ -21,6 +23,7 @@ import { WishlistService } from '../../services/wish-list.service';
     MatMenuModule,
     RouterModule,
     MatIconModule,
+    MatBadgeModule,
   ],
   providers: [ProductService],
   changeDetection: ChangeDetectionStrategy.OnPush,

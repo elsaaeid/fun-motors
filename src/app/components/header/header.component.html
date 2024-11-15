@@ -43,20 +43,25 @@
             </li>
             <li 
                 class="wishlist nav-link" 
-                data-toggle="modal" 
                 mat-button 
                 (click)="openWishList()">
-                <sup><span class="wishlist-total-count">{{ wishlistCount }}</span></sup>
-                <i class='bx bx-heart'></i>
+                <div 
+                    class="wishlist-total-count"
+                    matBadge="{{ wishlistCount }}" 
+                    matBadgeOverlap="false">
+                    <i class='bx bx-heart'></i>
+                </div>
             </li>
             <li 
                 class="cart nav-link" 
                 mat-button 
                 (click)="openCart()">
-                <span>
-                    <sup><span class="total-count">{{ cartTotalCount }}</span></sup>
+                <div 
+                    class="cart-total-count"
+                    matBadge="{{ cartTotalCount }}" 
+                    matBadgeOverlap="false">
                     <i class='bx bx-cart'></i>
-                </span>
+                </div>
             </li>
             <li class="user-item">
                 <span 

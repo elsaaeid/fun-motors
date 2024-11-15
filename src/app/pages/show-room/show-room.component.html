@@ -9,72 +9,47 @@
 <!-- Start showRoom -->
 <div class="showtool">
     <div class="feature-content">
-        <div class="feature">
-            <input type="checkbox" id="checkbox-beta" name="checkbox" checked>
-            <label for="checkbox-beta">
-                <h2>Make your Car Featured</h2>
-            </label>
-        </div>
         <h3 class="options-features">Options & Features</h3>
         <div class="tools">
+          <span class="feature">
+            <mat-checkbox
+              class="example-margin"
+              [checked]="task().completed"
+              [indeterminate]="partiallyComplete()"
+              (change)="update($event.checked)"
+            >
+              {{ task().name }}
+            </mat-checkbox>
+          </span>
+          <span class="checks-list">
             <ul>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha" name="checkbox" checked>
-                    <label for="checkbox-alpha">Steering Adjustment</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha1" name="checkbox">
-                    <label for="checkbox-alpha1">A/C</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha2" name="checkbox">
-                    <label for="checkbox-alpha2">Adjustable Seats</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha3" name="checkbox">
-                    <label for="checkbox-alpha3">Cigarette Lighter</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha4" name="checkbox">
-                    <label for="checkbox-alpha4">Heater</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha5" name="checkbox">
-                    <label for="checkbox-alpha5">Power Steering</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha6" name="checkbox">
-                    <label for="checkbox-alpha6">Bluetooth</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha7" name="checkbox">
-                    <label for="checkbox-alpha7">GPS</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="checkbox-alpha8" name="checkbox">
-                    <label for="checkbox-alpha8">Sunroof</label>
-                </li>
+              <li *ngFor="let subtask of task().subtasks; let i = index">
+                <mat-checkbox [checked]="subtask.completed" (change)="update($event.checked, i)">
+                  {{ subtask.name }}
+                </mat-checkbox>
+              </li>
             </ul>
+          </span>
         </div>
-    </div>            
-    
-    <div class="des-content">
-        <h4>Description</h4>
-        <textarea name="textarea" id="textarea" placeholder="Write a small description about your car..." rows="6"></textarea>
-    </div>
-    
-    <div class="upload">
-        <h4>Upload Car Images</h4>
-        <div class="service-block-inner">
+        
+        <div class="des-content">
+          <h4>Description</h4>
+          <textarea [(ngModel)]="description" placeholder="Write a small description about your car..." rows="6"></textarea>
+        </div>
+        
+        <div class="upload">
+          <h4>Upload Car Images</h4>
+          <div class="service-block-inner">
             <p>Please note that you should upload images similar to the example provided.</p>
+          </div>
+          <div class="up-image">
+            <label for="file" class="form_label">Upload Image</label>
+            <input type="file" id="file" name="img" (change)="onFileSelected($event)" />
+          </div>
         </div>
-    </div>
-    
-    <div class="up-image">
-        <label for="file" class="form_label">Upload Image</label>
-        <input type="file" id="file" name="img" placeholder="Enter your file">
-        <button type="submit">Submit</button>
-    </div>
+        
+        <button (click)="submitForm()" class="submit-button">Submit</button>
+      </div>          
     
     <div class="big-load">
         <h3 class="sample">Sample Images</h3>
