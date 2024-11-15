@@ -1,0 +1,41 @@
+$font-family: 'Arial', sans-serif;
+  
+  // Mixin for centering content
+  @mixin center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Full viewport height
+  }
+  
+
+// Styles for the not-found container
+.not-found-container {
+  @include center-content;
+  background-color: var(--white-color);
+  text-align: center;
+  padding: 20px;
+
+  img.not-found {
+    max-width: 100%; // Responsive image
+    height: auto; // Maintain aspect ratio
+    margin-bottom: 20px; // Space between image and text
+  }
+
+  p.not-found {
+    color: var(--black-color);
+    font-family: $font-family;
+    font-size: 1.5rem; // Responsive font size
+    margin: 0;
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+      font-size: 1.2rem; // Smaller font size on smaller screens
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem; // Even smaller font size on very small screens
+    }
+  }
+}

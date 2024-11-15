@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart-service';
+import { WishlistService } from '../../services/wish-list.service';
 
 // Define the component
 @Component({
@@ -28,7 +29,7 @@ export class NewCarsComponent implements OnInit {
   public modalCaption: string = ''; // To hold the caption for the modal
   public isModalOpen: boolean = false; // To control modal visibility
 
-  constructor(private productService: ProductService, private cartService: CartService) {} // Inject CartService
+  constructor(private productService: ProductService, private cartService: CartService, private wishlistService: WishlistService,) {} // Inject CartService
 
   ngOnInit(): void {
     this.loadProducts();
@@ -78,6 +79,11 @@ export class NewCarsComponent implements OnInit {
    // Add product to cart
    public addToCart(product: Product): void {
     this.cartService.addToCart(product); // Call the service to add the product to the cart
+  }
+  
+    // Add product to wishList
+    public addToWishlist(product: Product): void {
+    this.wishlistService.addToWishlist(product); // Call the service to
   }
 
   // Filter products based on the selected criteria

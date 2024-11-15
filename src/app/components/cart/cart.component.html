@@ -11,6 +11,7 @@
                     <span>{{ item.quantity }}</span>
                     <button (click)="increaseQuantity(item)">+</button>
                 </div>
+                <button class="btn" (click)="removeFromCart(item)">Remove</button>
             </div>
         </li>
     </ul>
@@ -20,6 +21,6 @@
     <div *ngIf="cartItems.length > 0">
         <h4>Total Count: {{ totalCount }}</h4>
         <h4>Total Price: E {{ calculateTotalPrice() }}</h4>
-        <button (click)="checkout()" class="checkout-button">Checkout</button>
+        <button (click)="checkout()" class="checkout-button btn">Checkout</button>
     </div>
 </div>

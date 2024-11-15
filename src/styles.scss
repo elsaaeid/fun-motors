@@ -44,19 +44,20 @@ $fun-motors-theme: mat.define-theme((
     --blue-color: rgb(55, 108, 255);
     --green-color: rgb(13, 189, 13);
   }
-  
+
+
   // Define variables for colors and sizes
   $border-color: #ccc;
   $border-radius: 4px;
   $margin: 20px;
   $padding: 10px;
-
   $modal-bg-color: rgba(0, 0, 0, 0.9);
   $modal-close-color: white;
   $modal-close-font-size: 28px;
   $modal-content-width: 80%;
   $modal-content-max-width: 700px;
   $caption-color: white;
+
   // Global styles
   * {
     font-family: 'Poppins', sans-serif;
@@ -99,6 +100,18 @@ $fun-motors-theme: mat.define-theme((
     margin-inline: 5px;
     margin-bottom: 28px;
   }
+  button {
+    padding: 10px; // Padding for buttons
+    background-color: var(--red-color);  // Primary button color
+    color: var(--white-color);  // Text color
+    border: none; // Remove border
+    border-radius: 4px; // Rounded corners
+    cursor: pointer; // Pointer cursor on hover
+
+    &:hover {
+      background-color: var(--red-hover-color);  // Darker shade on hover
+    }
+  }
 
   .app-container {
     position: relative;
@@ -130,15 +143,15 @@ $fun-motors-theme: mat.define-theme((
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 210px;
+
   .bann {
     width: 100%;
     display: flex;
     justify-content: right;
     align-items: center;
     color: var(--black-color);
-    margin-right: 20px;
-    margin-top: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
     
 .list-style {
     display: flex;
@@ -328,6 +341,10 @@ $fun-motors-theme: mat.define-theme((
           flex-direction: row;
           justify-content: space-evenly;
           align-items: center;
+
+          h4.card-title {
+            font-size: 12px;
+        }        
         }
       }
     }

@@ -42,7 +42,7 @@
                 <i class="fa fa-search"></i>
             </li>
             <li 
-                class="nav-link" 
+                class="wishlist nav-link" 
                 data-toggle="modal" 
                 mat-button 
                 (click)="openWishList()">
@@ -53,7 +53,7 @@
                 class="cart nav-link" 
                 mat-button 
                 (click)="openCart()">
-                <span class="nav-link">
+                <span>
                     <sup><span class="total-count">{{ cartTotalCount }}</span></sup>
                     <i class='bx bx-cart'></i>
                 </span>
@@ -99,11 +99,11 @@
                 <i class="fa fa-search"></i>
             </li>
             <li class="user-item">
-                <button mat-button [matMenuTriggerFor]="userMenu">
-                    <span class="nav-link">
+                    <span
+                        mat-button [matMenuTriggerFor]="userMenu"
+                        class="nav-link">
                         <i class="fas fa-user"></i>
                     </span>
-                </button>
                 <mat-menu #userMenu="matMenu">
                     <button mat-menu-item>
                         <a class="nav-link" routerLink="/login">Login</a>
@@ -114,11 +114,12 @@
                 </mat-menu>
             </li>
             <li>
-                <button mat-button [matMenuTriggerFor]="mainMenu">
-                    <span class="nav-link">
-                        <i class="fa fa-bars"></i>
-                    </span>
-                </button>
+                <span 
+                    mat-button 
+                    [matMenuTriggerFor]="mainMenu"
+                    class="nav-link">
+                    <i class="fa fa-bars"></i>
+                </span>
                 <mat-menu class="main-menu" #mainMenu="matMenu">
                     <button mat-menu-item>
                         <a class="nav-link" routerLink="/">الرائيسية</a>

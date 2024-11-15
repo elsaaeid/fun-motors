@@ -14,6 +14,8 @@
     h3 {
       margin-top: 20px; // Space above section headings
       margin-bottom: 10px; // Space below section headings
+      border-bottom: 1px solid var(--red-color);
+      width: max-content;
     }
   
     p {
@@ -30,7 +32,9 @@
         display: flex; // Use flexbox for item layout
         align-items: center; // Center items vertically
         margin-bottom: 15px; // Space between items
-  
+        border: 1px dashed var(--red-color);
+        padding: 10px;
+
         img {
           width: 50px; // Fixed width for images
           height: 50px; // Fixed height for images
@@ -61,19 +65,6 @@
         &:focus {
           border-color: var(--red-color);  // Change border color on focus
           outline: none; // Remove default outline
-        }
-      }
-  
-      button {
-        padding: 10px; // Padding for buttons
-        background-color: var(--red-color);  // Primary button color
-        color: var(--white-color);  // Text color
-        border: none; // Remove border
-        border-radius: 4px; // Rounded corners
-        cursor: pointer; // Pointer cursor on hover
-  
-        &:hover {
-          background-color: var(--red-hover-color);  // Darker shade on hover
         }
       }
     }

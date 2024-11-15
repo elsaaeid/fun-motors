@@ -35,11 +35,11 @@ export class CartComponent implements OnInit {
       item.quantity!--; // Decrement quantity
       this.cartService.updateCartItem(item);
     } else {
-      this.removeItem(item); // Optionally remove item if quantity is 1
+      this.removeFromCart(item); // Optionally remove item if quantity is 1
     }
   }
 
-  removeItem(item: Product): void {
+  removeFromCart(item: Product): void {
     this.cartService.removeFromCart(item);
     this.loadCartItems(); // Reload cart items after removal
   }

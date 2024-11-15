@@ -1,3 +1,15 @@
+<!-- Start headline -->
+<div class="headline">
+    <div class="bann">
+        <ol class="list-style">
+            <li><a href="new-cars" class="actived">موتوسيكلات</a></li>
+            <li><a href="new-cars" class="actived">المركبات</a></li>
+        </ol>
+        <h1><strong><a href="home" class="actived">الرائيسية</a></strong></h1>
+    </div>
+</div>
+<!-- End headline -->
+
 <!-- Start new-cars -->
 <div class="products-box">
     <div class="container-fluid">
@@ -27,7 +39,7 @@
                 <div class="products-single fix">
                     <div class="box-img-hover">
                         <div class="type-lb">
-                            <p class="new" *ngIf="product.isFeatured">جديد</p>
+                            <p class="new" *ngIf="product.isFeatured">New</p>
                         </div>
                         <img [src]="product.imageUrl" class="img-fluid" alt="{{ product.name }}">
                         <div class="mask-icon">
@@ -45,25 +57,20 @@
                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                 <li>
                                     <a
-                                       data-name="{{ product.name }}" 
-                                       [attr.data-price]="product.price" 
-                                       [attr.data-image]="product.imageUrl" 
-                                       class="wishlist add-to-wishlist btn">
+                                        (click)="addToWishlist(product)"
+                                        class="wishlist add-to-wishlist btn">
                                         <i class="far fa-heart"></i>
                                     </a>
                                 </li>
                             </ul>
                             <a
                                (click)="addToCart(product)"
-                               data-name="{{ product.name }}" 
-                               [attr.data-price]="product.price" 
-                               [attr.data-image]="product.imageUrl" 
-                               class="cart add-to-cart btn">أضف إلى السلة</a>
+                               class="cart add-to-cart btn">Add To Cart</a>
                         </div>
                     </div>
                     <div class="product-details">
                         <h4 class="card-title">{{ product.name }}</h4>
-                        <p class="card-text">السعر: E {{ product.price }}</p>
+                        <p class="card-text">Price: E {{ product.price }}</p>
                     </div>
                 </div>
             </div>

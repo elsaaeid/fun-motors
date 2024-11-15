@@ -4,7 +4,7 @@ import { WishlistService } from '../../services/wish-list.service';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
-
+import { CartService } from '../../services/cart-service';
 
 @Component({
   selector: 'app-wish-list',
@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class WishListComponent implements OnInit {
   public wishlistItems: Product[] = [];
 
-  constructor(private wishlistService: WishlistService) {}
+  constructor(private wishlistService: WishlistService, private cartService: CartService) {}
 
   ngOnInit(): void {
     this.loadWishlistItems();
@@ -31,9 +31,19 @@ export class WishListComponent implements OnInit {
     this.loadWishlistItems(); // Reload wishlist items after removal
   }
 
-  addToCart(item: Product): void {
-    // Logic to add the item to the cart
-    // This could involve calling a CartService method
-    console.log(`Adding ${item.name} to cart`);
+  addToWishlist(item: Product): void {
+    // Check if the item is already in the wishlist
+    const exists = this.wishlistItems.some(wishlistItem => wishlistItem.id === item.id);
+    
+    if (!exists) {
+      this.wishlistService.addToWishlist(item); // Add item to wishlist
+      this.loadWishlistItems(); // Reload wishlist items to reflect the change
+      console.log(`${item.name} has been added to the wishlist.`);
+    } else {
+      console.log(`${item.name} is already in the wishlist.`);
+    }
+  }
+  public addToCart(product: Product): void {
+    this.cartService.addToCart(product); // Call the service to add the product to the cart
   }
 }
