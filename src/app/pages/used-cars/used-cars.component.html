@@ -63,9 +63,36 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a
-                               (click)="addToCart(product)"
-                               class="cart add-to-cart btn">Add To Cart</a>
+                            <ul class="cart">
+                                <li>
+                                  <button
+                                    (click)="addToCart(product)"
+                                    *ngIf="!isProductInCart(product)">
+                                    Add To Cart
+                                  </button>
+                                </li>
+                                <li>
+                                  <button 
+                                    (click)="increaseQuantity(product)"
+                                    *ngIf="isProductInCart(product)">
+                                    +
+                                  </button>
+                                </li>
+                                <li>
+                                  <button 
+                                    (click)="decreaseQuantity(product)"
+                                    *ngIf="isProductInCart(product)">
+                                    -
+                                  </button>
+                                </li>
+                                <li>
+                                  <button 
+                                    *ngIf="isProductInCart(product)"
+                                    (click)="removeFromCart(product)">
+                                    <i class="fa fa-trash"></i>
+                                  </button>
+                                </li>
+                              </ul>
                         </div>
                     </div>
                     <div class="product-details">

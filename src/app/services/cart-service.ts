@@ -1,4 +1,3 @@
-// src/app/services/cart.service.ts
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 
@@ -22,6 +21,10 @@ export class CartService {
     return this.cartItems;
   }
 
+  isProductInCart(product: Product): boolean {
+    return this.cartItems.some(item => item.id === product.id); // Check if product is in cart
+  }
+
   updateCartItem(updatedProduct: Product): void {
     const existingProduct = this.cartItems.find(item => item.id === updatedProduct.id);
     if (existingProduct) {
@@ -36,7 +39,8 @@ export class CartService {
   getCartTotalCount(): number {
     return this.cartItems.reduce((total, item) => total + (item.quantity || 0), 0);
   }
+
   clearCart(): void {
     this.cartItems = [];
-}
+  }
 }

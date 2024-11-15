@@ -83,6 +83,32 @@ export class NewCarsComponent implements OnInit {
    public addToCart(product: Product): void {
     this.cartService.addToCart(product); // Call the service to add the product to the cart
   }
+
+  // Check if the product is in the cart
+  public isProductInCart(product: Product): boolean {
+    return this.cartService.isProductInCart(product);
+  }
+
+  // Increase quantity of the product
+  public increaseQuantity(item: Product): void {
+    item.quantity!++; // Use non-null assertion since we expect quantity to be defined
+    this.cartService.updateCartItem(item);
+  }
+  
+  // Decrease quantity of the product
+  public decreaseQuantity(item: Product): void {
+    if (item.quantity! > 1) {
+      item.quantity!--; // Decrement quantity
+      this.cartService.updateCartItem(item);
+    } else {
+      this.removeFromCart(item); // Remove item if quantity is 1
+    }
+  }
+
+  // Remove product from cart
+  public removeFromCart(item: Product): void {
+    this.cartService.removeFromCart(item);
+  }
   
     // Add product to wishList
     public addToWishlist(product: Product): void {

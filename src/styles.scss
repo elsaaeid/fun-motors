@@ -269,7 +269,6 @@ $fun-motors-theme: mat.define-theme((
       
         .box-img-hover {
           overflow: hidden;
-          position: relative;
           .type-lb {
             position: absolute;
             top: 0;
@@ -293,14 +292,19 @@ $fun-motors-theme: mat.define-theme((
           }
           .mask-icon {
             background: var(--sem-gradient-color);
+            height: 100%;
+            width: 100%;
+            position: absolute;
             top: -100%;
             opacity: 0;
             transition: all 0.3s ease-out 0.5s;
+            display: flex;
+            flex-direction: column;
         
             ul {
               display: inline-block;
               position: absolute;
-              bottom: 0;
+              bottom: 33px;
               right: 0;
               list-style: none;
         
@@ -321,22 +325,36 @@ $fun-motors-theme: mat.define-theme((
               }
             }
         
-            a.cart {
+            .cart {
               background: var(--red-color);
               position: absolute;
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+              width: 100%;
+              height: 33px;
               bottom: 0;
               left: 0;
-              padding: 10px 20px;
-              font-weight: 700;
-              color: var(--white-color);
+              list-style: none;
+              li{
+                
+                button {
+                  background: var(--red-color);
+                  color: var(--white-color);
+                  padding: 5px 10px;
+                  display: block;
+                  cursor: pointer;
         
-              &:hover {
-                background: var(--black-color);
-                color: var(--white-color);
+                  &:hover {
+                    background: var(--black-color);
+                    color: var(--white-color);
+                  }
+                }
               }
             }
           }
           &:hover .mask-icon {
+            position: absolute;
             opacity: 1;
             top: 0;
             transition-delay: 0s;

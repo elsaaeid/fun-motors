@@ -8,15 +8,13 @@ import { CartService } from '../../services/cart-service';
 import { WishlistService } from '../../services/wish-list.service';
 import { RouterModule } from '@angular/router';
 
-
-
 // Define the component
 @Component({
-  selector: 'app-boats', // Updated selector to reflect boats
-  templateUrl: './boats.component.html', // Updated template URL
+  selector: 'app-boats',
+  templateUrl: './boats.component.html',
   styleUrls: ['./boats.component.scss'],
 })
-export class BoatsComponent implements OnInit { // Updated class name
+export class BoatsComponent implements OnInit {
   public allProducts: Product[] = [];      // Array to hold all products
   public filteredProducts: Product[] = []; // Array to hold filtered products
   public searchTerm: string = '';          // Search term for filtering
@@ -32,7 +30,11 @@ export class BoatsComponent implements OnInit { // Updated class name
   public modalCaption: string = ''; // To hold the caption for the modal
   public isModalOpen: boolean = false; // To control modal visibility
 
-  constructor(private productService: ProductService, private cartService: CartService, private wishlistService: WishlistService,) {}
+  constructor(
+    private productService: ProductService, 
+    private cartService: CartService, 
+    private wishlistService: WishlistService
+  ) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -41,9 +43,9 @@ export class BoatsComponent implements OnInit { // Updated class name
   // Load products from the ProductService
   private loadProducts(): void {
     const productsList = this.productService.getProducts();
-    const boatsCategory = productsList.find(category => category.category === 'Boats'); // Updated category to 'Boats'
-    this.allProducts = boatsCategory ? boatsCategory.items : []; // Get items from the Boats category
-    this.filteredProducts = [...this.allProducts]; // Initialize filtered products
+    const boatsCategory = productsList.find(category => category.category === 'Boats');
+    this.allProducts = boatsCategory ? boatsCategory.items : [];
+    this.filteredProducts = [...this.allProducts];
   }
 
   // Handle search input
@@ -54,20 +56,45 @@ export class BoatsComponent implements OnInit { // Updated class name
     this.selectedOrganize = ''; // Reset organization selection when searching
   }
 
-  
   // Add product to cart
   public addToCart(product: Product): void {
-    this.cartService.addToCart(product); // Call the service to add the product to the cart
+    this.cartService.addToCart(product);
+  }
+
+  // Add product to wishList
+  public addToWishlist(product: Product): void {
+    this.wishlistService.addToWishlist(product);
+  }
+
+  // Check if the product is in the cart
+  public isProductInCart(product: Product): boolean {
+    return this.cartService.isProductInCart(product);
+  }
+
+  // Increase quantity of the product
+  public increaseQuantity(item: Product): void {
+    item.quantity!++; // Use non-null assertion since we expect quantity to be defined
+    this.cartService.updateCartItem(item);
   }
   
-    // Add product to wishList
-    public addToWishlist(product: Product): void {
-    this.wishlistService.addToWishlist(product); // Call the service to
+  // Decrease quantity of the product
+  public decreaseQuantity(item: Product): void {
+    if (item.quantity! > 1) {
+      item.quantity!--; // Decrement quantity
+      this.cartService.updateCartItem(item);
+    } else {
+      this.removeFromCart(item); // Remove item if quantity is 1
+    }
+  }
+
+  // Remove product from cart
+  public removeFromCart(item: Product): void {
+    this.cartService.removeFromCart(item);
   }
 
   // Handle organization change
   public onOrganizeChange(): void {
-    let sortedProducts = [...this.filteredProducts]; // Create a copy for sorting
+    let sortedProducts = [...this.filteredProducts];
 
     switch (this.selectedOrganize) {
       case 'السعر الاعلى للسعر الاقل':
@@ -83,20 +110,11 @@ export class BoatsComponent implements OnInit { // Updated class name
         sortedProducts.sort((a, b) => (b.dateAdded ? b.dateAdded.getTime() : 0) - (a.dateAdded ? a.dateAdded.getTime() : 0));
         break;
       default:
-        sortedProducts = [...this.allProducts]; // Reset to original product list if no filter is selected
+        sortedProducts = [...this.allProducts];
         break;
     }
 
-    this.filteredProducts = sortedProducts; // Update filtered products
-  }
-
-  // Filter products based on the selected criteria
-  public filterProducts(criteria: string): void {
-    if (criteria === '*') {
-      this.loadProducts(); // Load all products
-    } else {
-      this.onOrganizeChange(); // Apply the selected organization filter
-    }
+    this.filteredProducts = sortedProducts;
   }
 
   // Open modal with the selected image
@@ -115,13 +133,13 @@ export class BoatsComponent implements OnInit { // Updated class name
 // Define the module
 @NgModule({
   declarations: [
-    BoatsComponent, // Updated declaration to reflect boats component
+    BoatsComponent,
   ],
   imports: [
     CommonModule,
     FormsModule, 
     RouterModule
   ],
-  bootstrap: [BoatsComponent] // Bootstrap the component if this is the main module
+  bootstrap: [BoatsComponent]
 })
-export class AppModule { } // Or whatever your main module is called
+export class AppModule { }
