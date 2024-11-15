@@ -1,11 +1,19 @@
 <div class="search-container">
-  <input
-    type="text"
-    [(ngModel)]="searchTerm"
-    (input)="onSearch()"
-    placeholder="Search for products..."
-    class="search-input"
-  />
+  <div class="flex flex-row justify-between items-center">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+      placeholder="Search for products..."
+      class="search-input"
+    />
+    <span 
+        class="close-dialog nav-link cursor-pointer"
+        mat-button 
+        (click)="closeDialog()">
+        <i class="fa fa-close"></i>
+    </span>
+  </div>
   <select class="order-by" [(ngModel)]="selectedCategory" (change)="onCategoryChange()">
     <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
   </select>

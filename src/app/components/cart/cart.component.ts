@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { Router } from '@angular/router'; // Import Router for navigation
 import { CartService } from '../../services/cart-service';
 import { CommonModule } from '@angular/common';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -10,15 +12,20 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [FormsModule, MatDialogModule, CommonModule],
 })
 export class CartComponent implements OnInit {
+  readonly dialog = inject(MatDialog);
   public cartItems: Product[] = [];
 
   constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadCartItems();
+  }
+  closeDialog(): void {
+    // Close the search dialog
+    this.dialog.closeAll(); // This will close all open dialogs
   }
 
   loadCartItems(): void {

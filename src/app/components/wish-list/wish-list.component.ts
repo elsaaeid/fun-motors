@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { WishlistService } from '../../services/wish-list.service';
 import { FormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart-service';
 
@@ -14,12 +14,18 @@ import { CartService } from '../../services/cart-service';
   imports: [FormsModule, MatDialogModule, CommonModule],
 })
 export class WishListComponent implements OnInit {
+  readonly dialog = inject(MatDialog);
   public wishlistItems: Product[] = [];
 
   constructor(private wishlistService: WishlistService, private cartService: CartService) {}
 
   ngOnInit(): void {
     this.loadWishlistItems();
+  }
+  
+  closeDialog(): void {
+    // Close the search dialog
+    this.dialog.closeAll(); // This will close all open dialogs
   }
 
   loadWishlistItems(): void {

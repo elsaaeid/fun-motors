@@ -1,13 +1,23 @@
 <div class="wishlist">
-    <h2>Your Wishlist</h2>
-    <ul>
+    <div class="wishlist-header flex flex-row justify-between items-center">
+        <h2>Your Wishlist</h2>
+        <span 
+        class="close-dialog nav-link cursor-pointer"
+        mat-button 
+        (click)="closeDialog()">
+        <i class="fa fa-close"></i>
+    </span>
+    </div>
+    <ul class="product-list">
         <li *ngFor="let item of wishlistItems">
             <img [src]="item.imageUrl" alt="item image" style="width:50px;height:50px">
             <div>
                 <h4>{{ item.name }}</h4>
                 <p>Price: E {{ item.price }}</p>
                 <button (click)="addToCart(item)">Add to Cart</button>
-                <button (click)="removeFromWishlist(item)">Remove</button>
+                <button class="mt-2" (click)="removeFromWishlist(item)">
+                    <i class="fa fa-trash"></i>
+                </button>
             </div>
         </li>
     </ul>
