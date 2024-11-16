@@ -68,7 +68,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-08-02'),
-          color: 'off-blue',
+          color: '#074d7f',
         },
         { 
           id: 6, 
@@ -123,7 +123,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: false,
           dateAdded: new Date('2024-01-01'),
-          color: 'off-white',
+          color: '#d6d5da',
         },
         { 
           id: 11, 
@@ -145,7 +145,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-01'),
-          color: 'off-blue',
+          color: '#074d7f',
         },
       ]
     },
@@ -183,7 +183,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: true,
           dateAdded: new Date('2024-02-01'),
-          color: 'off-white',
+          color: '#d6d5da',
         },
         { 
           id: 16, 
