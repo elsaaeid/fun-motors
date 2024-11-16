@@ -46,7 +46,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-01'),
-          color: 'white',
+          color: '#d6d5da',
         },
         { 
           id: 4, 
