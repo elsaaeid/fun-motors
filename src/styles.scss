@@ -215,6 +215,46 @@ $fun-motors-theme: mat.define-theme((
       }
     }
 
+    .color-filter {
+      display: flex;
+      align-items: center;
+      position: relative;
+  
+      span {
+          margin-right: 10px;
+          font-weight: bold;
+      }
+  
+      .color-options {
+          display: flex;
+          flex-direction: column;
+          gap: 5px; // Space between color boxes
+          position: absolute;
+          left: 0;
+      }
+  
+      .color-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px; // Width of the color box
+          height: 30px; // Height of the color box
+          border: 1px solid var(--black-color); // Default border
+          border-radius: 50%;
+          cursor: pointer;
+          transition: border 0.3s;
+  
+          &.selected {
+              border: 2px solid var(--green-color); // Highlight selected color
+              box-shadow: var(--shadow-color);
+          }
+  
+          &:hover {
+              border: 2px solid var(--green-color); // Change border on hover
+              box-shadow: var(--shadow-color);
+          }
+      }
+  }
     .product-caption {
       display: flex;
       flex-direction: column;
@@ -394,6 +434,7 @@ $fun-motors-theme: mat.define-theme((
 
     .myModal-close {
         color: $modal-close-color;
+        margin: 20px;
         float: right;
         font-size: $modal-close-font-size;
         font-weight: bold;

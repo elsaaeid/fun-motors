@@ -24,6 +24,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-01'),
+          color: 'red',
         },
         { 
           id: 2, 
@@ -34,6 +35,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: false,
           dateAdded: new Date('2024-02-01'),
+          color: 'blue',
         },
         { 
           id: 3, 
@@ -44,6 +46,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-01'),
+          color: 'white',
         },
         { 
           id: 4, 
@@ -54,6 +57,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: false,
           dateAdded: new Date('2024-05-01'),
+          color: 'red',
         },
         { 
           id: 5, 
@@ -64,6 +68,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-08-02'),
+          color: 'off-blue',
         },
         { 
           id: 6, 
@@ -74,6 +79,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: false,
           dateAdded: new Date('2024-05-01'),
+          color: 'white',
         },
         { 
           id: 7, 
@@ -84,6 +90,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-01'),
+          color: 'white',
         },
         { 
           id: 8, 
@@ -94,6 +101,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-01'),
+          color: 'blue',
         },
         { 
           id: 9, 
@@ -104,6 +112,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-01'),
+          color: 'grey',
         },
         { 
           id: 10, 
@@ -114,6 +123,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: false,
           dateAdded: new Date('2024-01-01'),
+          color: 'off-white',
         },
         { 
           id: 11, 
@@ -124,6 +134,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-03-05'),
+          color: 'black',
         },
         { 
           id: 12, 
@@ -134,6 +145,7 @@ export class ProductService {
           category: 'New cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-01'),
+          color: 'off-blue',
         },
       ]
     },
@@ -149,6 +161,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: true,
           dateAdded: new Date('2024-01-06'),
+          color: 'white',
         },
         { 
           id: 14, 
@@ -159,6 +172,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: false,
           dateAdded: new Date('2024-04-06'),
+          color: 'blue',
         },
         { 
           id: 15, 
@@ -169,6 +183,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: true,
           dateAdded: new Date('2024-02-01'),
+          color: 'off-white',
         },
         { 
           id: 16, 
@@ -179,6 +194,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: true,
           dateAdded: new Date('2024-09-01'),
+          color: 'white',
         },
         { 
           id: 17, 
@@ -189,6 +205,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'black',
         },
         { 
           id: 18, 
@@ -199,6 +216,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'red',
         },
         { 
           id: 19, 
@@ -209,6 +227,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: false,
           dateAdded: new Date('2024-04-06'),
+          color: 'blue',
         },
         { 
           id: 20, 
@@ -219,6 +238,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: true,
           dateAdded: new Date('2024-04-01'),
+          color: 'black',
         },
         { 
           id: 21, 
@@ -229,6 +249,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'black',
         },
         { 
           id: 22, 
@@ -239,6 +260,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: false,
           dateAdded: new Date('2024-05-01'),
+          color: 'white',
         },
         { 
           id: 23, 
@@ -249,6 +271,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: true,
           dateAdded: new Date('2024-02-01'),
+          color: 'white',
         },
         { 
           id: 24, 
@@ -259,6 +282,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'white',
         },
       ]
     },
@@ -274,6 +298,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'red',
         },
         { 
           id: 27, 
@@ -284,6 +309,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'black',
         },
         { 
           id: 28, 
@@ -294,6 +320,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: true,
           dateAdded: new Date('2024-04-01'),
+          color: 'black',
         },
         { 
           id: 29, 
@@ -304,6 +331,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: false,
           dateAdded: new Date('2024-06-01'),
+          color: 'red',
         },
         { 
           id: 30, 
@@ -314,6 +342,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: true,
           dateAdded: new Date('2024-04-03'),
+          color: 'grey',
         },
         { 
           id: 31, 
@@ -324,6 +353,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'red',
         },
         { 
           id: 32, 
@@ -334,6 +364,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'blue',
         },
         { 
           id: 33, 
@@ -344,6 +375,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'grey',
         },
         { 
           id: 34, 
@@ -354,6 +386,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: true,
           dateAdded: new Date('2024-04-01'),
+          color: 'grey',
         },
         { 
           id: 35, 
@@ -364,6 +397,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: false,
           dateAdded: new Date('2024-09-01'),
+          color: 'red',
         },
         { 
           id: 36, 
@@ -374,6 +408,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: false,
           dateAdded: new Date('2023-04-01'),
+          color: 'black',
         },
         { 
           id: 37, 
@@ -384,6 +419,7 @@ export class ProductService {
           category: 'Motors',
           isFeatured: true,
           dateAdded: new Date('2024-06-01'),
+          color: 'blue',
         },
       ]
     },
@@ -399,6 +435,7 @@ export class ProductService {
           category: 'Boats',
           isFeatured: false,
           dateAdded: new Date('2024-04-01'),
+          color: 'blue',
         },
         { 
           id: 39, 
@@ -409,6 +446,7 @@ export class ProductService {
           category: 'Boats',
           isFeatured: true,
           dateAdded: new Date('2024-06-01'),
+          color: 'blue',
         },
         { 
           id: 40, 
@@ -419,6 +457,7 @@ export class ProductService {
           category: 'Boats',
           isFeatured: false,
           dateAdded: new Date('2024-03-01'),
+          color: 'black',
         },
         { 
           id: 42, 
@@ -429,6 +468,7 @@ export class ProductService {
           category: 'Boats',
           isFeatured: true,
           dateAdded: new Date('2024-04-01'),
+          color: 'red',
         },
       ]
     }

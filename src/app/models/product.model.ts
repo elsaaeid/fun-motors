@@ -9,4 +9,5 @@ export interface Product {
   isFeatured?: boolean; // Indicates if the product is featured (for "المميز" filter)
   dateAdded?: Date;   // Date when the product was added (for "الاحدث" filter)
   quantity?: number; // Add this line to include quantity
+  color?: string; // Add this line to include color
 }
