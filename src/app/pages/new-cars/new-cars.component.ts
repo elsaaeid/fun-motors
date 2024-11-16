@@ -28,7 +28,7 @@ export class NewCarsComponent implements OnInit {
     'المميز', 
     'الاحدث'
   ]; // Filter options
-  public colors: string[] = ['red', 'blue', '#074d7f', 'grey', '#d6d5da', 'white'];
+  public colors: string[] = ['red', 'blue', '#074d7f', 'grey', "#4c3f33", '#d6d5da', 'white',];
   
   public modalImage: string = ''; // To hold the image URL for the modal
   public modalCaption: string = ''; // To hold the caption for the modal

@@ -194,7 +194,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: true,
           dateAdded: new Date('2024-09-01'),
-          color: 'white',
+          color: '#4c3f33',
         },
         { 
           id: 17, 
@@ -227,7 +227,7 @@ export class ProductService {
           category: 'Used cars',
           isFeatured: false,
           dateAdded: new Date('2024-04-06'),
-          color: 'blue',
+          color: '#074d7f',
         },
         { 
           id: 20, 
