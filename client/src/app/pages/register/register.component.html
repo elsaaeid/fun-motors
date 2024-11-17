@@ -1,0 +1,70 @@
+<div class="register-container">
+  <div class="register-content">
+      <div class="user-circle">
+          <i class="fal fa-user-circle"></i>
+          <h3>Register</h3>
+      </div>
+      <form class="submission" (ngSubmit)="submitSignup()">
+          <div class="input-content">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              class="input"
+              [(ngModel)]="name"
+              required
+            />
+            <i class="fal fa-user"></i>
+          </div>
+          <div class="input-content">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              class="input"
+              [(ngModel)]="email"
+              required
+            />
+            <i class="fas fa-envelope envelope"></i>
+          </div>
+          <div class="input-content">
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              class="input"
+              [(ngModel)]="phone"
+              required
+            />
+            <i class="fas fa-mobile-alt" id="phone"></i>
+          </div>
+          <div class="input-content">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="input"
+              [(ngModel)]="password"
+              required
+            />
+            <i class="fas fa-lock" id="lock"></i>
+          </div>
+          <div class="input-content">
+            <input
+              type="password"
+              name="verifyPassword"
+              placeholder="Verify Password"
+              class="input"
+              [(ngModel)]="verifyPassword"
+              required
+            />
+            <i class="fas fa-lock" id="lock"></i>
+          </div>
+          <input type="submit" name="register" class="log" value="Register" />
+        </form>
+  </div>
+  <div class="login-content-bottom">
+      <a href="login" class="bott-content">Login Now</a>
+      <h6>Already have an account?!</h6>
+  </div>
+</div>

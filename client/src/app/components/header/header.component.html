@@ -1,0 +1,227 @@
+<!-- Header -->
+<div class="header" id="header">
+    <!-- top-nav -->
+    <div class="top-nav">
+        <ul class="list-inline hover-red">
+            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com" title="Twitter" target="_blank"><i
+                        class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com" title="LinkedIn" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.instagram.com" title="Instagram" target="_blank"><i
+                        class="fab fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    <!-- bottom-nav -->
+    <div class="bottom-nav">
+        <a routerLink="/home" title="logo" class="logo">
+            <img src="assets/images/logo/logo.png" alt="logo" />
+        </a>
+        <ul class="bottom-nav-list-inline2">
+            <li><a routerLink="/know-more" class="nav-link">اعرف اكتر</a></li>
+            <li><a routerLink="/latest-news" class="nav-link">اخر الاخبار</a></li>
+            <li><a routerLink="/show-room" class="nav-link">العروض</a></li>
+            <li class="boats-item">
+                <span class="nav-link">
+                    المركبات
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <ul class="dropdown-boats">
+                    <li mat-menu-item><a routerLink="/new-cars" class="menu-nav-link">سيارات جديده</a></li>
+                    <li mat-menu-item><a routerLink="/used-cars" class="menu-nav-link">سيارات مستعمله</a></li>
+                    <li mat-menu-item><a routerLink="/motors" class="menu-nav-link">موتوسيكلات</a></li>
+                    <li mat-menu-item><a routerLink="/boats" class="menu-nav-link">قوارب</a></li>
+                </ul>
+            </li>
+            <li><a routerLink="/home" class="active nav-link">الرائيسية</a></li>
+            <li 
+                class="search nav-link"
+                mat-button 
+                (click)="openSearch()">
+                <i class="fa fa-search"></i>
+            </li>
+            <li 
+                class="wishlist nav-link" 
+                mat-button 
+                (click)="openWishList()">
+                <div 
+                    class="wishlist-total-count"
+                    matBadge="{{ wishlistCount }}" 
+                    matBadgeOverlap="false">
+                    <i class='bx bx-heart'></i>
+                </div>
+            </li>
+            <li 
+                class="cart nav-link" 
+                mat-button 
+                (click)="openCart()">
+                <div 
+                    class="cart-total-count"
+                    matBadge="{{ cartTotalCount }}" 
+                    matBadgeOverlap="false">
+                    <i class='bx bx-cart'></i>
+                </div>
+            </li>
+            <li class="user-item">
+                <span 
+                    mat-button 
+                    [matMenuTriggerFor]="userMenu"
+                    class="nav-link">
+                    <i class="fas fa-user"></i>
+                </span>
+                <mat-menu #userMenu="matMenu">
+                    <button mat-menu-item *ngIf="isLoggedIn">
+                        <a class="nav-link" routerLink="/profile">Profile</a>
+                    </button>
+                    <button mat-menu-item *ngIf="isLoggedIn">
+                        <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+                    </button>
+                    <button mat-menu-item *ngIf="!isLoggedIn">
+                        <a class="nav-link" routerLink="/login">Login</a>
+                    </button>
+                    <button mat-menu-item *ngIf="!isLoggedIn">
+                        <a class="nav-link" routerLink="/register">Register</a>
+                    </button>
+                    <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()">
+                        <a class="nav-link">Logout</a>
+                    </button>
+                </mat-menu>
+            </li>
+        </ul>
+        <ul class="mobile-container">
+            <li 
+                class="nav-link flex flex-row" 
+                data-toggle="modal" 
+                mat-button 
+                (click)="openWishList()">
+                <sup><span class="wishlist-total-count">{{ wishlistCount }}</span></sup>
+                <i class='bx bx-heart'></i>
+            </li>
+            <li 
+                class="cart nav-link" 
+                mat-button 
+                (click)="openCart()">
+                <span class="nav-link flex flex-row">
+                    <sup><span class="total-count">{{ cartTotalCount }}</span></sup>
+                    <i class='bx bx-cart'></i>
+                </span>
+            </li>
+            <li 
+                class="search nav-link"
+                mat-button 
+                (click)="openSearch()">
+                <i class="fa fa-search"></i>
+            </li>
+            <li class="user-item">
+                    <span
+                        mat-button [matMenuTriggerFor]="userMenu"
+                        class="nav-link">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <mat-menu #userMenu="matMenu">
+                        <button mat-menu-item *ngIf="isLoggedIn">
+                            <a class="nav-link" routerLink="/profile">Profile</a>
+                        </button>
+                        <button mat-menu-item *ngIf="isLoggedIn">
+                            <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+                        </button>
+                        <button mat-menu-item *ngIf="!isLoggedIn">
+                            <a class="nav-link" routerLink="/login">Login</a>
+                        </button>
+                        <button mat-menu-item *ngIf="!isLoggedIn">
+                            <a class="nav-link" routerLink="/register">Register</a>
+                        </button>
+                        <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()">
+                            <a class="nav-link">Logout</a>
+                        </button>
+                    </mat-menu>
+            </li>
+            <li>
+                <span 
+                    mat-button 
+                    [matMenuTriggerFor]="mainMenu"
+                    class="nav-link">
+                    <i class="fa fa-bars"></i>
+                </span>
+                <mat-menu class="main-menu" #mainMenu="matMenu">
+                    <button mat-menu-item>
+                        <a class="nav-link" routerLink="/home">الرائيسية</a>
+                    </button>
+                    <button mat-menu-item class="boats-item">
+                        <span class="nav-link">
+                            المركبات
+                            <i class="fa fa-caret-down"></i>
+                        </span>
+                        <ul class="dropdown-menu-boats">
+                            <li mat-menu-item><a routerLink="/new-cars" class="nav-link">سيارات جديده</a></li>
+                            <li mat-menu-item><a routerLink="/used-cars" class="nav-link">سيارات مستعمله</a></li>
+                            <li mat-menu-item><a routerLink="/motors" class="nav-link">موتوسيكلات</a></li>
+                            <li mat-menu-item><a routerLink="/boats" class="nav-link">قوارب</a></li>
+                        </ul>
+                    </button>
+                    <button mat-menu-item>
+                        <a routerLink="/show-room" class="nav-link">العروض</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a routerLink="/latest-news" class="nav-link">اخر الاخبار</a>
+                    </button>
+                    <button mat-menu-item>
+                        <a routerLink="/know-more" class="nav-link">اعرف اكتر</a>
+                    </button>
+                </mat-menu>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Cart-Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <table class="show-cart table">
+                <!-- Cart items will be dynamically inserted here -->
+            </table>
+            <div>Total price: $<span class="total-cart"></span></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary order-now">Order now</button>
+            </div>
+        </div>
+        </div>
+    </div> 
+    <!-- order-message-container -->
+    <div class="order-message-container"></div>
+    <!-- Wishlist-Modal -->
+    <div class="modal fade" id="wishlist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Wishlist</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-wishlist table">
+                        <!-- Wishlist items will be dynamically inserted here -->
+                    </table>
+                    <div>Total items: <span class="wishlist-total-count"></span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn move-to-cart btn-primary">Move to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- wishlist-message-container -->
+    <div class="wishlist-message-container"></div>
+</div>

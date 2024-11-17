@@ -1,0 +1,18 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--red-color); // Button color
+    color: var(--white-color); // Text color
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+    z-index: 10000;
+  
+    &:hover {
+      background-color: var(--red-hover-color); // Darker shade on hover
+    }
+  }

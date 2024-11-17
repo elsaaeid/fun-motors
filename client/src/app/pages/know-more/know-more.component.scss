@@ -1,0 +1,51 @@
+.knowMore-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+  
+    .know-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    p.know-para {
+        color: var(--shape-color);
+        font-size: 17px;
+      }
+      a.know-link1 {
+        text-decoration: none;
+        color: var(--red-color);
+    
+        &:hover {
+          border-bottom: 1px solid var(--red-hover-color);
+        }
+    }
+    button.know-link2 {
+        border: none;
+        background-color: var(--red-color);
+        color: var(--white-color);
+        border-radius: 5px;
+        padding: 5px;
+    
+        &:hover {
+          background-color: var(--red-hover-color);
+          color: var(--white-color);
+        }
+      }
+}
+
+
+@media (max-width: 540px) {
+  /*-------------------------know-more--------------------------------------*/
+  p.know-para {
+    font-size: 12px;
+  }
+
+  a.know-link2 {
+    width: 84px;
+    margin-bottom: 6px;
+  }
+}
