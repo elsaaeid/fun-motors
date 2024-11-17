@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { Observable } from 'rxjs';
 import { User } from '../../models/user.model'; // Adjust the path as necessary
 import { API_URL } from '../auth-service/auth.service'; // Adjust the path as necessary
@@ -17,10 +17,19 @@ export class UserService {
   /**
    * Get a user by ID
    * @returns An observable of the user data
-   */  getUserProfile(): Observable<User> {
-    return this.http.get<User>(this.getUserProfileUrl); // Call the correct endpoint
+   */
+// In user.service.ts
+getUserProfile(): Observable<User> {
+  const token = localStorage.getItem('token'); // Retrieve the token from local storage
+  if (!token) {
+    console.error('No token found, user is not authenticated.'); // Log the error
+    throw new Error('No token found, user is not authenticated.'); // Throw an error
   }
-
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+  });
+  return this.http.get<User>(this.getUserProfileUrl, { headers }); // Call the correct endpoint
+}
 
   /**
    * Update user information

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RedirectCommand, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -15,12 +15,19 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AuthGuard } from './guards/auth.guard';
+
 
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
+    {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [AuthGuard]
+      },
     { path: 'register', component: RegisterComponent },
     { path: 'show-room', component: ShowRoomComponent },
     { path: 'know-more', component: KnowMoreComponent },
@@ -31,7 +38,6 @@ export const routes: Routes = [
     { path: 'boats', component: BoatsComponent },
     { path: 'checkout', component: CheckoutComponent },
     { path: 'thank-you', component: ThankYouComponent },
-    { path: 'profile', component: ProfileComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: '**', component: Error404ViewsComponent } // Catch-all route for invalid URLs
 ];
