@@ -11,6 +11,8 @@ export class UserService {
   constructor(private http: HttpClient) {}
   private getUserProfileUrl = `${API_URL}getUser`; // URL for getUserProfile
   private updateUserUrl = `${API_URL}updateUser`; // URL for updateUser
+  private getUsersUrl = `${API_URL}getUsers`; // URL for getUsers
+  
   
   /**
    * Get a user by ID
@@ -45,6 +47,6 @@ export class UserService {
    * @returns An observable of an array of users
    */
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(API_URL);
+    return this.http.get<User[]>(this.getUsersUrl);
   }
 }
