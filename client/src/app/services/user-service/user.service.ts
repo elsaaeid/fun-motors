@@ -9,23 +9,26 @@ import { API_URL } from '../auth-service/auth.service'; // Adjust the path as ne
 })
 export class UserService {
   constructor(private http: HttpClient) {}
-
+  private getUserProfileUrl = `${API_URL}getUser`; // URL for getUserProfile
+  private updateUserUrl = `${API_URL}updateUser`; // URL for updateUser
+  
   /**
    * Get a user by ID
-   * @param userId - The ID of the user to retrieve
    * @returns An observable of the user data
-   */
-  getUserById(userId: string): Observable<User> {
-    return this.http.get<User>(`${API_URL}${userId}`);
+   */  getUserProfile(): Observable<User> {
+    return this.http.get<User>(this.getUserProfileUrl); // Call the correct endpoint
   }
+
 
   /**
    * Update user information
    * @param user - The user object containing updated information
    * @returns An observable of the updated user data
-   */
+   */  // Get the logged-in user's profile
+
+  // Update user
   updateUser(user: User): Observable<User> {
-    return this.http.put<User>(`${API_URL}${user.id}`, user);
+    return this.http.put<User>(this.updateUserUrl, user);
   }
 
   /**

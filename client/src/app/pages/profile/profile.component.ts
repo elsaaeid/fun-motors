@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model'; // Adjust the path as necessary
 import { UserService } from '../../services/user-service/user.service';
-import { AuthService } from '../../services/auth-service/auth.service';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
 
 
 
@@ -18,30 +17,24 @@ export class ProfileComponent implements OnInit {
   isLoading: boolean = true; // Loading state
   errorMessage: string | null = null; // Error message
 
-  constructor(private authService: AuthService, private userService: UserService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.loadUserProfile();
   }
 
   loadUserProfile(): void {
-    const userId = this.authService.getUserId(); // Get the logged-in user's ID from AuthService
-    if (userId) {
-      this.userService.getUserById(userId).subscribe({
-        next: (data) => {
-          this.user = data;
-          this.isLoading = false;
-        },
-        error: (error) => {
-          this.errorMessage = 'Failed to load user profile.';
-          this.isLoading = false;
-          console.error('Error loading user profile:', error);
-        }
-      });
-    } else {
-      this.errorMessage = 'User ID not found.';
-      this.isLoading = false;
-    }
+    this.userService.getUserProfile().subscribe({
+      next: (data) => {
+        this.user = data;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        this.errorMessage = 'Failed to load user profile.';
+        this.isLoading = false;
+        console.error('Error loading user profile:', error);
+      }
+    });
   }
 
   updateProfile(): void {
