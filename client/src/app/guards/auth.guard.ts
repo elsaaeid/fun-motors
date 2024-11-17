@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router, private toastService: ToastService) {}
 
   canActivate(): Promise<boolean> {
-    return this.authService.getLoginStatus().toPromise().then(isLoggedIn => {
+    return this.authService.loginStatus().toPromise().then(isLoggedIn => {
       if (!isLoggedIn) {
         this.toastService.info("Session expired, please login to continue");
         this.router.navigate(['/login']); // Replace with your login path
