@@ -2,9 +2,10 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 
+// Middleware to protect routes
 const protect = asyncHandler(async (req, res, next) => {
   try {
-    const token = req.cookies.token;
+    const token = req.cookies.token; // Get token from cookies
     if (!token) {
       res.status(401);
       throw new Error("Not authorized, please login");
@@ -20,41 +21,44 @@ const protect = asyncHandler(async (req, res, next) => {
       throw new Error("User not found");
     }
     if (user.role === "suspended") {
-      res.status(400);
+      res.status(403); // Use 403 Forbidden for suspended users
       throw new Error("User suspended, please contact support");
     }
 
-    req.user = user;
-    next();
+    req.user = user; // Attach user to request
+    next(); // Proceed to the next middleware
   } catch (error) {
     res.status(401);
     throw new Error("Not authorized, please login");
   }
 });
 
+// Middleware to check if user is verified
 const verifiedOnly = asyncHandler(async (req, res, next) => {
   if (req.user && req.user.isVerified) {
-    next();
+    next(); // Proceed if user is verified
   } else {
     res.status(401);
     throw new Error("Not authorized, account not verified");
   }
 });
 
+// Middleware to check if user is an author or admin
 const authorOnly = asyncHandler(async (req, res, next) => {
-  if (req.user.role === "author" || req.user.role === "admin") {
-    next();
+  if (req.user && (req.user.role === "author" || req.user.role === "admin")) {
+    next(); // Proceed if user is an author or admin
   } else {
-    res.status(401);
+    res.status(403); // Use 403 Forbidden for unauthorized roles
     throw new Error("Not authorized as an author");
   }
 });
 
+// Middleware to check if user is an admin
 const adminOnly = asyncHandler(async (req, res, next) => {
   if (req.user && req.user.role === "admin") {
-    next();
+    next(); // Proceed if user is admin
   } else {
-    res.status(401);
+    res.status(403); // Use 403 Forbidden for unauthorized roles
     throw new Error("Not authorized as an admin");
   }
 });

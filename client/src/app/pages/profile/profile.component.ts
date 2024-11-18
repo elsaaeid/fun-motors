@@ -24,7 +24,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.loadUserProfile();
   }
-
   loadUserProfile() {
     this.authService.getUser().subscribe({
       next: (response) => {
@@ -33,7 +32,12 @@ export class ProfileComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error fetching user profile', error);
-        this.errorMessage = 'Failed to load user profile. Please try again later.';
+        if (error.status === 401) {
+          this.errorMessage = 'Unauthorized access. Please log in.';
+          this.router.navigate(['/login']); // Redirect to login page
+        } else {
+          this.errorMessage = 'Failed to load user profile. Please try again later.';
+        }
         this.isLoading = false;
       }
     });

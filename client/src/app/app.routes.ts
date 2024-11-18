@@ -23,10 +23,14 @@ export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
+    // {
+    //     path: 'profile',
+    //     component: ProfileComponent,
+    //     canActivate: [AuthGuard]
+    //   },
     {
         path: 'profile',
         component: ProfileComponent,
-        canActivate: [AuthGuard]
       },
     { path: 'register', component: RegisterComponent },
     { path: 'show-room', component: ShowRoomComponent },
